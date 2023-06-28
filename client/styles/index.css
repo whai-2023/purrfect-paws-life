@@ -1,8 +1,16 @@
-body {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 20px;
-  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.app {
+  width: 100%;
+  display: flex
 }
+
+body {
+  display:flex;
+  background-repeat: repeat;
+}
+
+@keyframes flashing {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
