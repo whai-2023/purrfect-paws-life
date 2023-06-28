@@ -3,6 +3,10 @@
   display: flex
 }
 
+.game-square{
+position: absolute;
+}
+
 body {
   display:flex;
   background-repeat: repeat;
