@@ -4,8 +4,8 @@ import {
   Route,
 } from 'react-router-dom'
 
-import App from '../../client/components/App'
-import Landing from '../../client/components/Landing'
+import App from './components/App'
+import Landing from './components/Landing'
 // import Game from './components/Game'
 // import ChooseCharacterPage from './components/ChooseCharacterPage'
 
