@@ -9,7 +9,7 @@ exports.up = function (knex) {
     table.integer('value')
     table.integer('x')
     table.integer('y')
-    table.integer('rotation')
+    table.integer('rot')
   })
 }
 

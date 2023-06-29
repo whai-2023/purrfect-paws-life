@@ -1,11 +1,11 @@
 interface Props {
-  x: string
-  y: string
-  rot: string
+  x: number
+  y: number
+  rot: number
   content: string
 }
 
-export default function OrangeSquare(props: Props) {
+export default function YellowSquare(props: Props) {
   const size = {
     x: '100px',
     y: '100px',
@@ -17,10 +17,10 @@ export default function OrangeSquare(props: Props) {
       style={{
         width: size.x,
         height: size.y,
-        left: props.x,
-        bottom: props.y,
-        transform: `rotate(${props.rot})`,
-        backgroundColor: 'orange',
+        left: `${props.x}px`,
+        bottom: `${props.y}px`,
+        transform: `rotate(${props.rot}deg)`,
+        backgroundColor: 'yellow',
       }}
     >
       <p>{props.content}</p>
