@@ -1,7 +1,7 @@
 interface Props {
-  x: string
-  y: string
-  rot: string
+  x: number
+  y: number
+  rot: number
   content: string
 }
 
@@ -17,9 +17,9 @@ export default function YellowSquare(props: Props) {
       style={{
         width: size.x,
         height: size.y,
-        left: props.x,
-        bottom: props.y,
-        transform: `rotate(${props.rot})`,
+        left: `${props.x}px`,
+        bottom: `${props.y}px`,
+        transform: `rotate(${props.rot}deg)`,
         backgroundColor: 'yellow',
       }}
     >
