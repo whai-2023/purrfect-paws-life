@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom'
+import SpinningWheel from './SpinningWheel'
 function App() {
   return (
     <>
       <section>
-        <Outlet />
+        <SpinningWheel />
       </section>
     </>
   )
