@@ -29,7 +29,7 @@ export default function GameBoard() {
             x={el.x}
             y={el.y}
             rot={el.rot}
-            content={el.content}
+            content={`${el.id} ${el.content}`}
           />
         )
       })}
@@ -40,7 +40,7 @@ export default function GameBoard() {
             x={el.x}
             y={el.y}
             rot={el.rot}
-            content={el.content}
+            content={`${el.id} ${el.content}`}
           />
         )
       })}
@@ -51,7 +51,7 @@ export default function GameBoard() {
             x={el.x}
             y={el.y}
             rot={el.rot}
-            content={el.content}
+            content={`${el.id} ${el.content}`}
           />
         )
       })}
@@ -62,7 +62,7 @@ export default function GameBoard() {
             x={el.x}
             y={el.y}
             rot={el.rot}
-            content={el.content}
+            content={`${el.id} ${el.content}`}
           />
         )
       })}
@@ -73,7 +73,7 @@ export default function GameBoard() {
             x={el.x}
             y={el.y}
             rot={el.rot}
-            content={el.content}
+            content={`${el.id} ${el.content}`}
           />
         )
       })}

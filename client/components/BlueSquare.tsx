@@ -7,8 +7,8 @@ interface Props {
 
 export default function BlueSquare(props: Props) {
   const size = {
-    x: '100px',
-    y: '100px',
+    x: '250px',
+    y: '250px',
   }
 
   return (
