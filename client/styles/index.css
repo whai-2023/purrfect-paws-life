@@ -17,3 +17,12 @@ body {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.wheel {
+  font-size: larger;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  /* height: 500px;
+  width: 500px; */
+}
