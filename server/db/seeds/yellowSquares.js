@@ -80,6 +80,14 @@ exports.seed = async function (knex) {
     },
     {
       id: 10,
+      input: 'You wake your owner up at night',
+      value: -5,
+      x: 1440,
+      y: 430,
+      rot: 2,
+    },
+    {
+      id: 11,
       input: 'Make biscuits / pies',
       value: 5,
       x: 1800,
@@ -87,7 +95,7 @@ exports.seed = async function (knex) {
       rot: -3,
     },
     {
-      id: 11,
+      id: 12,
       input: 'Your owner knits you a cute outfit',
       value: 5,
       x: 1800,
@@ -95,7 +103,7 @@ exports.seed = async function (knex) {
       rot: 1,
     },
     {
-      id: 12,
+      id: 13,
       input: 'You meet the celebrity, grumpy cat',
       x: 1950,
       y: 750,
@@ -103,7 +111,7 @@ exports.seed = async function (knex) {
       rot: 0,
     },
     {
-      id: 13,
+      id: 14,
       input: 'Snuggle with your owner',
       value: 5,
       x: 1950,
@@ -111,7 +119,7 @@ exports.seed = async function (knex) {
       rot: 1,
     },
     {
-      id: 14,
+      id: 15,
       input: 'Your owner gives you belly scratches',
       value: 5,
       x: 2100,
@@ -119,7 +127,7 @@ exports.seed = async function (knex) {
       rot: -3,
     },
     {
-      id: 15,
+      id: 16,
       input: 'Give the cutest meow your owner has ever heard',
       value: 5,
       x: 2100,
@@ -127,7 +135,7 @@ exports.seed = async function (knex) {
       rot: 1,
     },
     {
-      id: 16,
+      id: 17,
       input: 'Spend the night sleeping in your owners bed',
       value: 5,
       x: 2400,
@@ -135,7 +143,7 @@ exports.seed = async function (knex) {
       rot: -3,
     },
     {
-      id: 17,
+      id: 18,
       input: 'Learn to high-five with your owner',
       value: 5,
       x: 2400,
@@ -143,7 +151,7 @@ exports.seed = async function (knex) {
       rot: 4,
     },
     {
-      id: 18,
+      id: 19,
       input: 'Cat vomit on the carpet',
       value: -5,
       x: 2550,
@@ -151,7 +159,7 @@ exports.seed = async function (knex) {
       rot: 1,
     },
     {
-      id: 19,
+      id: 20,
       input: 'Get sick from drinking bad water',
       value: 0,
       x: 2675,
@@ -159,7 +167,7 @@ exports.seed = async function (knex) {
       rot: -3,
     },
     {
-      id: 20,
+      id: 21,
       input: 'You get into an alley fight',
       value: -5,
       x: 2750,
@@ -167,7 +175,7 @@ exports.seed = async function (knex) {
       rot: 3,
     },
     {
-      id: 21,
+      id: 22,
       input: 'You oversleep and miss breakfast',
       value: -5,
       x: 2865,
@@ -175,7 +183,7 @@ exports.seed = async function (knex) {
       rot: -2,
     },
     {
-      id: 22,
+      id: 23,
       input: 'Debt collector comes to your door!',
       value: 0,
       x: 2975,
@@ -183,7 +191,7 @@ exports.seed = async function (knex) {
       rot: 4,
     },
     {
-      id: 23,
+      id: 24,
       input: "Break your owner's favourite vase",
       value: -5,
       x: 2675,
@@ -191,7 +199,7 @@ exports.seed = async function (knex) {
       rot: 3,
     },
     {
-      id: 24,
+      id: 25,
       input: "Knock the Christmas tree down. You've ruined Christmas!",
       value: -10,
       x: 2775,
@@ -199,7 +207,7 @@ exports.seed = async function (knex) {
       rot: -2,
     },
     {
-      id: 25,
+      id: 26,
       input: 'Cough a furball onto the carpet',
       value: -5,
       x: 2900,
@@ -207,7 +215,7 @@ exports.seed = async function (knex) {
       rot: 1,
     },
     {
-      id: 26,
+      id: 27,
       input: 'Owner catches you trying to steal food off the kitchen counter',
       value: -5,
       x: 3025,
@@ -215,20 +223,12 @@ exports.seed = async function (knex) {
       rot: 3,
     },
     {
-      id: 27,
+      id: 28,
       input: 'You bite your owner',
       value: -5,
-      x: 3200,
-      y: 350,
+      x: 3250,
+      y: 375,
       rot: -2,
-    },
-    {
-      id: 28,
-      input: 'You wake your owner up at night',
-      value: -5,
-      x: 3325,
-      y: 300,
-      rot: 2,
     },
     {
       id: 29,
