@@ -3,15 +3,15 @@ import RedSquare from './RedSquare'
 import PurpleSquare from './PurpleSquare'
 import GreenSquare from './GreenSquare'
 import BlueSquare from './BlueSquare'
-import {
-  orangeData,
-  redData,
-  purpleData,
-  greenData,
-  blueData,
-} from '../lib/lib'
+import { useQuery } from '@tanstack/react-query'
+import { getAllYellowSquares, getYellowSquareById } from '../apis'
+import { redData, purpleData, greenData, blueData } from '../lib/lib'
 
 export default function GameBoard() {
+  const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
+    getAllYellowSquares()
+  )
+
   const size = {
     x: '4000px',
     y: '800px',
@@ -55,17 +55,18 @@ export default function GameBoard() {
           />
         )
       })}
-      {orangeData.map((el) => {
-        return (
-          <YellowSquare
-            key={el.id}
-            x={el.x}
-            y={el.y}
-            rot={el.rot}
-            content={`${el.id} ${el.content}`}
-          />
-        )
-      })}
+      {yellowSquares &&
+        yellowSquares.map((el) => {
+          return (
+            <YellowSquare
+              key={el.id}
+              x={el.x}
+              y={el.y}
+              rot={el.rot}
+              content={`${el.id} ${el.input}`}
+            />
+          )
+        })}
       {greenData.map((el) => {
         return (
           <GreenSquare

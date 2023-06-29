@@ -7,6 +7,14 @@ exports.seed = async function (knex) {
   await knex('yellow-squares').del()
   await knex('yellow-squares').insert([
     {
+      id: 1,
+      input: 'Play hide and seek with owner,',
+      value: 5,
+      x: 300,
+      y: 475,
+      rot: 1,
+    },
+    {
       id: 2,
       input: 'You find a giant fresh piece of ham in the trash',
       value: 5,
@@ -92,7 +100,7 @@ exports.seed = async function (knex) {
       x: 1950,
       y: 750,
       rot: -3,
-      rotation: 0,
+      rot: 0,
     },
     {
       id: 13,
@@ -237,14 +245,6 @@ exports.seed = async function (knex) {
       x: 3450,
       y: 550,
       rot: 2,
-    },
-    {
-      id: 1,
-      input: 'Play hide and seek with owner,',
-      value: 5,
-      x: 3575,
-      y: 475,
-      rot: 1,
     },
   ])
 }

@@ -1,7 +1,12 @@
 import request from 'superagent'
+import YellowSquare from '../../models/YellowSquare'
 
 export function getYellowSquareById(id: number) {
   return request.get(`/api/v1/yellow-squares/${id}`)
+}
+
+export function getAllYellowSquares(): Promise<YellowSquare[]> {
+  return request.get(`/api/v1/yellow-squares`).then((res) => res.body)
 }
 
 export function getOwnerById(id: number) {

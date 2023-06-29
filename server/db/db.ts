@@ -19,6 +19,10 @@ export async function getYellowSquareById(id: number, db = connection) {
   return db('yellow-squares').where({ id }).first()
 }
 
+export async function getAllYellowSquares(db = connection) {
+  return db('yellow-squares').select('*')
+}
+
 export async function getChoiceById(id: number, db = connection) {
   const choices = await db('choices').where({ id }).select('choice1', 'choice2')
   return choices
