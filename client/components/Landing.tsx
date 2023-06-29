@@ -32,7 +32,7 @@ export default function Landing() {
     >
       <LandingCats />
       <div>
-        <Link to="/whatever" style={{ textDecoration: 'none' }}>
+        <Link to="/game" style={{ textDecoration: 'none' }}>
           <h1 style={{ color: textColour, backgroundColor: 'white' }}>
             Purrfect Paws Life
           </h1>
