@@ -78,7 +78,14 @@ exports.seed = async function (knex) {
       y: 0,
       rotation: 0,
     },
-    { id: 10, input: 'Make biscuits/pies', value: 5, x: 0, y: 0, rotation: 0 },
+    {
+      id: 10,
+      input: 'Make biscuits / pies',
+      value: 5,
+      x: 0,
+      y: 0,
+      rotation: 0,
+    },
     {
       id: 11,
       input: 'Your owner knits you a cute outfit',
@@ -233,7 +240,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 30,
-      input: 'iYou get lost on the way back home',
+      input: 'You get lost on the way back home',
       value: 0,
       x: 0,
       y: 0,

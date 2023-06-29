@@ -1,4 +1,4 @@
-import OrangeSquare from './OrangeSquare'
+import YellowSquare from './YellowSquare'
 import RedSquare from './RedSquare'
 import PurpleSquare from './PurpleSquare'
 import GreenSquare from './GreenSquare'
@@ -57,7 +57,7 @@ export default function GameBoard() {
       })}
       {orangeData.map((el) => {
         return (
-          <OrangeSquare
+          <YellowSquare
             key={el.id}
             x={el.x}
             y={el.y}
