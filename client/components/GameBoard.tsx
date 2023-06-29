@@ -13,7 +13,7 @@ import {
 
 export default function GameBoard() {
   const size = {
-    x: '3000px',
+    x: '4000px',
     y: '800px',
   }
 

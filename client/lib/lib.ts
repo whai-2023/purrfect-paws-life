@@ -62,6 +62,97 @@ export const orangeData = [
     rot: '5deg',
     content: 'Play hide and seek with owner, get 5 treats',
   },
+  {
+    id: 9,
+    x: '1800px', //sideways
+    y: '700px', // up down
+    rot: '-3deg',
+    content: 'Kittens',
+  },
+  {
+    id: 10,
+    x: '1800px', //sideways
+    y: '400px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 11,
+    x: '1950px', //sideways
+    y: '750px', // up down
+    rot: '-3deg',
+    content: 'Kittens',
+  },
+  {
+    id: 12,
+    x: '1950px', //sideways
+    y: '350px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 13,
+    x: '2100px', //sideways
+    y: '750px', // up down
+    rot: '-3deg',
+    content: 'Kittens',
+  },
+  {
+    id: 14,
+    x: '2100px', //sideways
+    y: '350px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 15,
+    x: '2400px', //sideways
+    y: '650px', // up down
+    rot: '-3deg',
+    content: 'Kittens',
+  },
+  {
+    id: 16,
+    x: '2400px', //sideways
+    y: '450px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 17,
+    x: '2550px', //sideways
+    y: '550px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 18,
+    x: '2675px', //sideways
+    y: '485px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 19,
+    x: '2750px', //sideways
+    y: '365px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 20,
+    x: '2800px', //sideways
+    y: '245px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
+  {
+    id: 21,
+    x: '2925px', //sideways
+    y: '200px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
 ]
 
 export const redData = [
@@ -110,6 +201,20 @@ export const greenData = [
     rot: '3deg',
     content: 'Play hide and seek with owner, get 5 treats',
   },
+  {
+    id: 3,
+    x: '2250px', //sideways
+    y: '700px', // up down
+    rot: '0deg',
+    content: 'Kittens',
+  },
+  {
+    id: 4,
+    x: '2250px', //sideways
+    y: '400px', // up down
+    rot: '1deg',
+    content: 'Invest',
+  },
 ]
 
 export const blueData = [
@@ -146,7 +251,7 @@ export const purpleData = [
   },
 
   {
-    id: 3,
+    id: 4,
     x: '1170px', //sideways
     y: '430px', // up down
     rot: '-1deg',
@@ -155,15 +260,15 @@ export const purpleData = [
   {
     id: 5,
     x: '1670px', //sideways
-    y: '450px', // up down
-    rot: '1deg',
-    content: 'Invest',
-  },
-  {
-    id: 4,
-    x: '1670px', //sideways
     y: '650px', // up down
     rot: '-3deg',
     content: 'Kittens',
+  },
+  {
+    id: 6,
+    x: '1670px', //sideways
+    y: '450px', // up down
+    rot: '1deg',
+    content: 'Invest',
   },
 ]
