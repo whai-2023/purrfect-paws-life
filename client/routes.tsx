@@ -6,6 +6,7 @@ import {
 
 import App from './components/App'
 import Landing from './components/Landing'
+import GameBoard from './components/GameBoard'
 // import Game from './components/Game'
 // import ChooseCharacterPage from './components/ChooseCharacterPage'
 
@@ -13,6 +14,7 @@ export const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Landing />} />
+      <Route path="/game" element={<GameBoard />} />
       {/* <Route path="character/game" element={<Game />} /> */}
     </Route>
   )
