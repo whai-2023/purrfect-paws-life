@@ -1,7 +1,10 @@
 import '../styles/index.css'
 import WheelComponent from 'react-wheel-of-prizes'
+import { useQueryClient } from '@tanstack/react-query'
 
 const SpinningWheel = () => {
+  const queryClient = useQueryClient()
+
   const segments = ['1', '2', '3', '4', '5', '6']
   const segColors = [
     '#EE4040',
@@ -13,9 +16,11 @@ const SpinningWheel = () => {
     '#EC3F3F',
     '#FF9000',
   ]
+
   const onFinished = (winner: string) => {
-    console.log(winner)
+    queryClient.setQueryData(['spinningWheelData'], winner)
   }
+
   return (
     <div className="wheel">
       <WheelComponent
