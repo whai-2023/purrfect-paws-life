@@ -18,7 +18,10 @@ const SpinningWheel = () => {
   ]
 
   const onFinished = (winner: string) => {
-    queryClient.setQueryData(['spinningWheelData'], winner)
+    console.log('hellos')
+    queryClient.setQueryData<{ value: number }>(['spinningWheelData'], {
+      value: Number(winner),
+    })
   }
 
   return (

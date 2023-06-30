@@ -5,8 +5,8 @@ import GreenSquare from './GreenSquare'
 import BlueSquare from './BlueSquare'
 import Footer from './Footer'
 
-import { useQuery, useQueryClient } from '@tanstack/react-query'
-import { useState } from 'react'
+import { useQuery, useQueryClient, useMutation } from '@tanstack/react-query'
+import { useState, useEffect } from 'react'
 import { getAllYellowSquares } from '../apis'
 
 import { redData, purpleData, greenData, blueData } from '../lib/lib'
@@ -21,13 +21,28 @@ export default function GameBoard() {
   const [player1Position, setPlayer1Position] = useState(1)
   const [player2Position, setPlayer2Position] = useState(1)
 
-  const spinningWheelData = queryClient.getQueryData(['spinningWheelData'])
+  // fetch todos
+  // redux state manager (sync, async)
+  // react-query (async)
 
+  // fetch todos
+  //
+  // { rollId: 1, value: 4 }
+  // { rollId: 2, value: 1 }
+  // { rollId: 3, value: 5 }
+  // { rollId: 4, value: 3 }
+  // { rollId: 5, value: 2 }
+
+  const spinningWheelData =
+    queryClient.getQueryData<number>(['spinningWheelData']) ?? 1
+
+  const [prevSpinningWheelData, setPrevSpinningWheelData] =
+    useState(spinningWheelData)
   const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
     getAllYellowSquares()
   )
 
-  const movePlayer = (steps) => {
+  const movePlayer = (steps: number) => {
     if (activePlayer === 1) {
       setPlayer1Position((prevPosition) => prevPosition + steps)
       setActivePlayer(2)
@@ -37,11 +52,21 @@ export default function GameBoard() {
     }
   }
 
+  if (spinningWheelData !== prevSpinningWheelData) {
+    console.log('render2')
+    movePlayer(spinningWheelData)
+    setPrevSpinningWheelData(spinningWheelData)
+  }
+
   return (
     <>
       <div
         className="game-board"
-        style={{ width: '4000px', height: '800', backgroundColor: 'lightblue' }}
+        style={{
+          width: '4000px',
+          height: '800px',
+          backgroundColor: 'lightblue',
+        }}
       >
         {purpleData.map((el) => {
           return (
