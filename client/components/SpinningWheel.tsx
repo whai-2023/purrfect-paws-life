@@ -1,9 +1,10 @@
+import React, { useEffect } from 'react'
 import '../styles/index.css'
 import WheelComponent from 'react-wheel-of-prizes'
-import { useQueryClient } from '@tanstack/react-query'
+import useGameStore from '../gameStore'
 
 const SpinningWheel = () => {
-  const queryClient = useQueryClient()
+  const { turnCount, setTurnCount } = useGameStore()
 
   const segments = ['1', '2', '3', '4', '5', '6']
   const segColors = [
@@ -18,11 +19,14 @@ const SpinningWheel = () => {
   ]
 
   const onFinished = (winner: string) => {
-    console.log('hellos')
-    queryClient.setQueryData<{ value: number }>(['spinningWheelData'], {
-      value: Number(winner),
-    })
+    console.log(winner)
+    console.log(turnCount)
+    setTurnCount(Number(turnCount) + 1)
   }
+
+  useEffect(() => {
+    console.log(turnCount)
+  }, [turnCount])
 
   return (
     <div className="wheel">
@@ -30,7 +34,7 @@ const SpinningWheel = () => {
         segments={segments}
         segColors={segColors}
         winningSegment="won 10"
-        onFinished={(winner: string) => onFinished(winner)}
+        onFinished={onFinished}
         primaryColor="black"
         contrastColor="white"
         buttonText="SPIN"
