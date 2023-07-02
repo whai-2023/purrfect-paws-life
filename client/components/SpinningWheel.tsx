@@ -1,10 +1,9 @@
-import { useEffect } from 'react'
 import '../styles/index.css'
 import WheelComponent from 'react-wheel-of-prizes'
 import useGameStore from '../gameStore'
 
 const SpinningWheel = () => {
-  const { turnCount, activePlayer, setTurnStats } = useGameStore()
+  const { setTurnStats } = useGameStore()
 
   const segments = ['1', '2', '3', '4', '5', '6']
   const segColors = [
@@ -21,10 +20,6 @@ const SpinningWheel = () => {
   const onFinished = (winner: string) => {
     setTurnStats(1, Number(winner))
   }
-
-  useEffect(() => {
-    console.log(turnCount, activePlayer)
-  }, [turnCount])
 
   return (
     <div className="wheel">

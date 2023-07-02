@@ -3,9 +3,10 @@ import { CatTower } from './CatTower'
 
 export type PlayerState = {
   id: number
+  name: string
   path: number
   moveTotal: number
   treats: number
-  owner: Owner[] | string
-  catTower: CatTower[] | string
+  owner: Owner[]
+  catTower: CatTower[]
 }

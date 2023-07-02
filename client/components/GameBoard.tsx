@@ -17,19 +17,30 @@ import cat1 from '../public/catImage/cat1.jpg'
 import cat2 from '../public/catImage/cat2.jpg'
 
 export default function GameBoard() {
-  const { turnCount, activePlayer, players } = useGameStore()
+  const { activePlayer, players, setTreats } = useGameStore()
 
-  const [player1Position, setPlayer1Position] = useState(1)
-  const [player2Position, setPlayer2Position] = useState(1)
+  // const [player1Position, setPlayer1Position] = useState(1)
+  // const [player2Position, setPlayer2Position] = useState(1)
 
   const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
     getAllYellowSquares()
   )
 
   useEffect(() => {
-    setPlayer1Position(players[0].moveTotal)
-    setPlayer2Position(players[1].moveTotal)
-  }, [turnCount])
+    function addTreats() {
+      if (yellowSquares) {
+        activePlayer === 1
+          ? setTreats(yellowSquares[players[0].moveTotal].value)
+          : setTreats(yellowSquares[players[1].moveTotal].value)
+        // activePlayer === 1
+        //   ? console.log(yellowSquares[player1Position].value)
+        //   : console.log(yellowSquares[player2Position].value)
+      }
+    }
+    addTreats()
+    // setPlayer1Position(players[0].moveTotal)
+    // setPlayer2Position(players[1].moveTotal)
+  }, [activePlayer])
 
   return (
     <>
@@ -83,8 +94,8 @@ export default function GameBoard() {
                 y={el.y}
                 rot={el.rot}
                 content={`${el.id} ${el.input}`}
-                player1={player1Position === el.id ? cat1 : ''}
-                player2={player2Position === el.id ? cat2 : ''}
+                player1={players[0].moveTotal === el.id ? cat1 : ''}
+                player2={players[1].moveTotal === el.id ? cat2 : ''}
               />
             )
           })}
