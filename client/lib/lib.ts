@@ -48,28 +48,28 @@ export const greenData = [
     content: 'PAY DAY',
   },
   {
-    id: 2,
+    id: 3,
     x: '1300px', //sideways
     y: '370px', // up down
     rot: '3deg',
     content: 'PAY DAY',
   },
   {
-    id: 3,
+    id: 4,
     x: '2250px', //sideways
     y: '700px', // up down
     rot: '-3deg',
     content: 'PAY DAY',
   },
   {
-    id: 4,
+    id: 5,
     x: '2250px', //sideways
     y: '400px', // up down
     rot: '1deg',
     content: 'PAY DAY',
   },
   {
-    id: 5,
+    id: 6,
     x: '3100px', //sideways
     y: '475px', // up down
     rot: '1deg',

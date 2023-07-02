@@ -3,6 +3,8 @@ interface Props {
   y: number
   rot: number
   content: string
+  player1: string
+  player2: string
 }
 
 export default function YellowSquare(props: Props) {
@@ -24,6 +26,8 @@ export default function YellowSquare(props: Props) {
       }}
     >
       <p>{props.content}</p>
+      <img src={props.player1} alt="" />
+      <img src={props.player2} alt="" />
     </div>
   )
 }
