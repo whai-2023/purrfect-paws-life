@@ -16,7 +16,7 @@ function PopUp(props: PopupProps) {
     <div className="Popup">
       {isOpen && (
         <div>
-          <div>{`${props.content.input}. You get ${props.content.value} treats!`}</div>
+          <div>{`${props.content.input} You get ${props.content.value} treats!`}</div>
           <button onClick={() => setIsOpen(false)}>Close Pop-up</button>
         </div>
       )}

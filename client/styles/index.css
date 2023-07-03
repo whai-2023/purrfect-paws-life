@@ -7,17 +7,21 @@
   position: absolute;
 }
 
-/* body {
+body {
   display: flex;
-  background-repeat: repeat;
-} */
+  overflow-y: hidden;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
 
 .game-board {
   background-image: url(../public/Cat-Life-board.jpg);
   position: absolute;
   max-height: 100vh;
-  background-size: auto 100%;
+  background-size: 3710px 900px;
+  border: none; /* Remove border */
 }
+
 
 @keyframes flashing {
   0% {
@@ -40,9 +44,20 @@
   width: 500px;
 }
 
+.audioPlayer {
+  /* position: fixed; */
+  /* top: 10px;
+  left: 10px; */
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+}
+
 .playerBox {
   font-size: larger;
-  background-color: #f0fc7e;
+  background-color: #f3faab;
   display: flex;
   justify-content: space-around;
   width: 75vw;
