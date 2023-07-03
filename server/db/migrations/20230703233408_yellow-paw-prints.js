@@ -3,13 +3,10 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable('paw-prints', (table) => {
+  return knex.schema.createTable('yellow-paw-prints', (table) => {
     table.increments('id')
-    table.integer('x')
-    table.integer('y')
-    table.string('type')
-    table.integer('path')
-    table.integer('space')
+    table.string('input')
+    table.integer('value')
   })
 }
 
@@ -18,5 +15,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable('paw-prints')
+  return knex.schema.dropTable('yellow-paw-prints')
 }
