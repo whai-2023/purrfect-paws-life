@@ -11,7 +11,13 @@ import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { getAllYellowSquares } from '../apis'
 
-import { redData, purpleData, greenData, blueData } from '../lib/lib'
+import {
+  redData,
+  purpleData,
+  greenData,
+  blueData,
+  yellowSquares,
+} from '../lib/lib'
 
 import cat1 from '../public/catImage/cat1.jpg'
 import cat2 from '../public/catImage/cat2.jpg'
@@ -22,9 +28,9 @@ export default function GameBoard() {
   const [player1Position, setPlayer1Position] = useState(1)
   const [player2Position, setPlayer2Position] = useState(1)
 
-  const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
-    getAllYellowSquares()
-  )
+  // const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
+  //   getAllYellowSquares()
+  // )
 
   useEffect(() => {
     setPlayer1Position(players[0].moveTotal)
@@ -36,9 +42,8 @@ export default function GameBoard() {
       <div
         className="game-board"
         style={{
-          width: '4000px',
-          height: '800px',
-          backgroundColor: 'lightblue',
+          width: '3710px',
+          height: '1800px',
         }}
       >
         {purpleData.map((el) => {
