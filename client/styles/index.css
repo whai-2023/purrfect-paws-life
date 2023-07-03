@@ -44,6 +44,12 @@ body {
   width: 500px;
 }
 
+.audioPlayer {
+  /* position: fixed; */
+  /* top: 10px;
+  left: 10px; */
+}
+
 .footer {
   display: flex;
   align-items: flex-end;
@@ -51,7 +57,7 @@ body {
 
 .playerBox {
   font-size: larger;
-  background-color: #f0fc7e;
+  background-color: #f3faab;
   display: flex;
   justify-content: space-around;
   width: 75vw;
