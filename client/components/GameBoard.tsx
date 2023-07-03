@@ -4,6 +4,7 @@ import PurpleSquare from './PurpleSquare'
 import GreenSquare from './GreenSquare'
 import BlueSquare from './BlueSquare'
 import Footer from './Footer'
+import PopUp from './PopUp'
 
 import useGameStore from '../gameStore'
 
@@ -19,8 +20,8 @@ import cat2 from '../public/catImage/cat2.jpg'
 export default function GameBoard() {
   const { activePlayer, players, setTreats } = useGameStore()
 
-  // const [player1Position, setPlayer1Position] = useState(1)
-  // const [player2Position, setPlayer2Position] = useState(1)
+  const [player1Position, setPlayer1Position] = useState(1)
+  const [player2Position, setPlayer2Position] = useState(1)
 
   const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
     getAllYellowSquares()
@@ -32,14 +33,12 @@ export default function GameBoard() {
         activePlayer === 1
           ? setTreats(yellowSquares[players[0].moveTotal].value)
           : setTreats(yellowSquares[players[1].moveTotal].value)
-        // activePlayer === 1
-        //   ? console.log(yellowSquares[player1Position].value)
-        //   : console.log(yellowSquares[player2Position].value)
       }
     }
     addTreats()
-    // setPlayer1Position(players[0].moveTotal)
-    // setPlayer2Position(players[1].moveTotal)
+    setPlayer1Position(players[0].moveTotal)
+    setPlayer2Position(players[1].moveTotal)
+    console.log(players, activePlayer)
   }, [activePlayer])
 
   return (
@@ -52,39 +51,15 @@ export default function GameBoard() {
           backgroundColor: 'lightblue',
         }}
       >
-        {purpleData.map((el) => {
-          return (
-            <PurpleSquare
-              key={`purple ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
+        {yellowSquares ? (
+          activePlayer === 1 ? (
+            <PopUp content={yellowSquares[player1Position - 1]} />
+          ) : (
+            <PopUp content={yellowSquares[player2Position - 1]} />
           )
-        })}
-        {blueData.map((el) => {
-          return (
-            <BlueSquare
-              key={`blue ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
-          )
-        })}
-        {redData.map((el) => {
-          return (
-            <RedSquare
-              key={`red ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
-          )
-        })}
+        ) : (
+          ''
+        )}
         {yellowSquares &&
           yellowSquares.map((el) => {
             return (
@@ -93,23 +68,12 @@ export default function GameBoard() {
                 x={el.x}
                 y={el.y}
                 rot={el.rot}
-                content={`${el.id} ${el.input}`}
-                player1={players[0].moveTotal === el.id ? cat1 : ''}
-                player2={players[1].moveTotal === el.id ? cat2 : ''}
+                content={`${el.id} ${el.input} Treats: ${el.value}`}
+                player1={player1Position === el.id ? cat1 : ''}
+                player2={player2Position === el.id ? cat2 : ''}
               />
             )
           })}
-        {greenData.map((el) => {
-          return (
-            <GreenSquare
-              key={`green ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
-          )
-        })}
       </div>
       <Footer />
     </>

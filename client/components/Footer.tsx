@@ -27,11 +27,11 @@ export default function Footer() {
         </div>
         <div className="icons">
           {Array.isArray(players[activePlayer - 1].catTower)
-            ? players[activePlayer - 1].catTower.map((el) => {
+            ? players[activePlayer - 1].owner.map((el) => {
                 return (
                   <img
-                    className="houseIcon"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr8mZGp_UXMfkR5Z0jXSC7WBQyxwz09zzINA"
+                    className="ownerIcon"
+                    src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
                   />
                 )
               })
