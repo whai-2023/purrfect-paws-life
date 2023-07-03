@@ -9,15 +9,19 @@
 
 body {
   display: flex;
-  background-repeat: repeat;
+  overflow-y: hidden;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .game-board {
   background-image: url(../public/Cat-Life-board.jpg);
   position: absolute;
   max-height: 100vh;
-  background-size: auto 100%;
+  background-size: 3710px 900px;
+  border: none; /* Remove border */
 }
+
 
 @keyframes flashing {
   0% {
@@ -47,8 +51,8 @@ body {
 }
 
 .footer {
-  /* display: flex;
-  align-items: flex-end; */
+  display: flex;
+  align-items: flex-end;
 }
 
 .playerBox {

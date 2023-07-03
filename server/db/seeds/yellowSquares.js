@@ -8,7 +8,7 @@ exports.seed = async function (knex) {
   await knex('yellow-squares').insert([
     {
       id: 1,
-      input: 'Play hide and seek with owner,',
+      input: 'You play hide and seek with your owner!',
       value: 5,
       x: 410,
       y: 465,
@@ -16,7 +16,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 2,
-      input: 'You find a giant fresh piece of ham in the trash',
+      input: 'You find a giant fresh piece of ham in the trash!',
       value: 5,
       x: 540,
       y: 590,
@@ -24,7 +24,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 3,
-      input: 'You catch the house mouse',
+      input: 'You catch the house mouse!',
       value: 5,
       x: 640,
       y: 730,
@@ -48,7 +48,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 6,
-      input: 'You learn a new trick',
+      input: 'You learn a new trick!',
       value: 5,
       x: 1100,
       y: 750,
@@ -56,7 +56,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 7,
-      input: 'You explore a new neighbourhood',
+      input: 'You explore a new neighbourhood!',
       value: 0,
       x: 1150,
       y: 540,
@@ -73,7 +73,7 @@ exports.seed = async function (knex) {
 
     {
       id: 10,
-      input: 'You wake your owner up at night',
+      input: 'You wake your owner up at night...',
       value: -5,
       x: 1360,
       y: 280,
@@ -81,7 +81,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 11,
-      input: 'Make biscuits / pies',
+      input: 'Make biscuits / pies.',
       value: 5,
       x: 480,
       y: 230,
@@ -89,7 +89,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 12,
-      input: 'Your owner knits you a cute outfit',
+      input: 'Your owner knits you a cute outfit.',
       value: 5,
       x: 830,
       y: 220,
@@ -97,14 +97,14 @@ exports.seed = async function (knex) {
     },
     {
       id: 13,
-      input: 'You meet the celebrity, grumpy cat',
+      input: 'You meet the celebrity, grumpy cat!',
       x: 1000,
       y: 290,
       rot: -3,
     },
     {
       id: 14,
-      input: 'Snuggle with your owner',
+      input: 'Snuggle with your owner.',
       value: 5,
       x: 1600,
       y: 290,
@@ -112,7 +112,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 15,
-      input: 'Your owner gives you belly scratches',
+      input: 'Your owner gives you belly scratches.',
       value: 5,
       x: 2100,
       y: 290,
@@ -120,7 +120,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 16,
-      input: 'Give the cutest meow your owner has ever heard',
+      input: 'You give the cutest meow your owner has ever heard!',
       value: 5,
       x: 1500,
       y: 560,
@@ -128,7 +128,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 17,
-      input: 'Spend the night sleeping in your owners bed',
+      input: 'Spend the night sleeping in your owners bed.',
       value: 5,
       x: 1700,
       y: 770,
@@ -136,7 +136,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 18,
-      input: 'Learn to high-five with your owner',
+      input: 'Learn to high-five with your owner.',
       value: 5,
       x: 2040,
       y: 740,
@@ -144,7 +144,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 19,
-      input: 'Cat vomit on the carpet',
+      input: 'Cat vomit on the carpet...',
       value: -5,
       x: 2170,
       y: 650,
@@ -152,7 +152,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 20,
-      input: 'Get sick from drinking bad water',
+      input: 'Get sick from drinking bad water...',
       value: 0,
       x: 2350,
       y: 650,
@@ -160,7 +160,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 21,
-      input: 'You get into an alley fight',
+      input: 'You get into an alley fight...',
       value: -5,
       x: 2650,
       y: 800,
@@ -168,7 +168,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 22,
-      input: 'You oversleep and miss breakfast',
+      input: 'You oversleep and miss breakfast...',
       value: -5,
       x: 2880,
       y: 700,
@@ -184,7 +184,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 24,
-      input: "Break your owner's favourite vase",
+      input: "Break your owner's favourite vase...",
       value: -5,
       x: 3260,
       y: 580,
@@ -200,7 +200,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 26,
-      input: 'Cough a furball onto the carpet',
+      input: 'Cough a furball onto the carpet...',
       value: -5,
       x: 2650,
       y: 500,
@@ -208,7 +208,8 @@ exports.seed = async function (knex) {
     },
     {
       id: 27,
-      input: 'Owner catches you trying to steal food off the kitchen counter',
+      input:
+        'Owner catches you trying to steal food off the kitchen counter...',
       value: -5,
       x: 2650,
       y: 360,
@@ -216,7 +217,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 28,
-      input: 'You bite your owner',
+      input: 'You bite your owner...',
       value: -5,
       x: 3100,
       y: 170,
@@ -224,7 +225,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 29,
-      input: 'You spill your food bowl all over the floor',
+      input: 'You spill your food bowl all over the floor...',
       value: -5,
       x: 3450,
       y: 270,
@@ -256,7 +257,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 33,
-      input: 'PARTNER',
+      input: 'CHOOSE PARTNER',
       x: 1850, //sideways
       y: 700, // up down
       value: 0,
@@ -265,7 +266,7 @@ exports.seed = async function (knex) {
 
     {
       id: 34,
-      input: 'buy new crib',
+      input: 'BUY CAT TOWER',
       x: 1920, //sideways
       y: 250, // up down
       value: 0,
@@ -273,7 +274,7 @@ exports.seed = async function (knex) {
     },
     {
       id: 35,
-      input: 'get another owner',
+      input: 'CHOOSE EXTRA OWNER',
       x: 2300, //sideways
       y: 470, // up down
       value: 0,
