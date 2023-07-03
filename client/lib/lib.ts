@@ -42,34 +42,41 @@ export const greenData = [
   },
   {
     id: 2,
+    x: '1210',
+    y: '280',
+    rot: '5deg',
+    content: 'PAY DAY',
+  },
+  {
+    id: 3,
     x: '1550px', //sideways
     y: '700px', // up down
     rot: '-2deg',
     content: 'PAY DAY',
   },
   {
-    id: 3,
+    id: 4,
     x: '1750px', //sideways
     y: '220px', // up down
     rot: '3deg',
     content: 'PAY DAY',
   },
   {
-    id: 4,
+    id: 5,
     x: '2270px', //sideways
     y: '300px', // up down
     rot: '-3deg',
     content: 'PAY DAY',
   },
   {
-    id: 5,
+    id: 6,
     x: '2500px', //sideways
     y: '750px', // up down
     rot: '1deg',
     content: 'PAY DAY',
   },
   {
-    id: 6,
+    id: 7,
     x: '2970px', //sideways
     y: '180px', // up down
     rot: '1deg',
@@ -105,21 +112,42 @@ export const purpleData = [
     x: '1920px', //sideways
     y: '250px', // up down
     rot: '-1deg',
-    content: 'SOLO',
+    content: 'buy new crib',
   },
   {
     id: 5,
     x: '2300px', //sideways
     y: '470px', // up down
     rot: '-3deg',
-    content: 'KITTENS',
+    content: 'get another owner',
   },
   {
     id: 6,
     x: '2790px', //sideways
-    y: '210px', // up down
+    y: '240px', // up down
     rot: '1deg',
-    content: 'INVEST',
+    content: 'go invest in a house',
+  },
+  {
+    id: 7,
+    x: '3300px', //sideways
+    y: '240px', // up down
+    rot: '1deg',
+    content: 'go invest in a house',
+  },
+  {
+    id: 8,
+    x: '3500px', //sideways
+    y: '430px', // up down
+    rot: '1deg',
+    content: 'go invest in a house',
+  },
+  {
+    id: 9,
+    x: '3100px', //sideways
+    y: '560px', // up down
+    rot: '1deg',
+    content: 'go invest in a house',
   },
 ]
 
@@ -188,14 +216,7 @@ export const yellowSquares = [
     y: 400,
     rot: -5,
   },
-  {
-    id: 9,
-    input: 'You have a nice afternoon nap in the sun',
-    value: 5,
-    x: 1210,
-    y: 280,
-    rot: 5,
-  },
+
   {
     id: 10,
     input: 'You wake your owner up at night',
@@ -355,12 +376,12 @@ export const yellowSquares = [
     y: 270,
     rot: -3,
   },
-  {
-    id: 30,
-    input: 'You get lost on the way back home',
-    value: 0,
-    x: 3000,
-    y: 550,
-    rot: 2,
-  },
+  // {
+  //   id: 30,
+  //   input: 'You get lost on the way back home',
+  //   value: 0,
+  //   x: 3000,
+  //   y: 550,
+  //   rot: 2,
+  // },
 ]
