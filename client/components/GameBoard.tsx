@@ -42,7 +42,7 @@ export default function GameBoard() {
       <div
         className="game-board"
         style={{
-          width: '3300px',
+          width: '3710px',
           height: '1800px',
         }}
       >
