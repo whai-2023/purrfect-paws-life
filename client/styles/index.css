@@ -1,28 +1,40 @@
 .app {
   width: 100%;
-  display: flex
+  display: flex;
 }
 
-.game-square{
-position: absolute;
+.game-square {
+  position: absolute;
 }
 
 body {
-  display:flex;
+  display: flex;
   background-repeat: repeat;
 }
 
+.game-board {
+  background-image: url(../public/Cat-Life-board.jpg);
+
+  max-height: 100vh;
+  background-size: auto 100%;
+}
 @keyframes flashing {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .wheel {
   font-size: 35px;
-  position: fixed; 
-  bottom:-40px;
-  left:-130px;
+  position: fixed;
+  bottom: -40px;
+  left: -130px;
   height: 500px;
   width: 500px;
 }
@@ -30,19 +42,18 @@ body {
 .footer {
   /* display: flex;
   align-items: flex-end; */
- 
 }
 
 .playerBox {
   font-size: larger;
-  background-color: #F0FC7E;
+  background-color: #f0fc7e;
   display: flex;
   justify-content: space-around;
   width: 75vw;
-  position:fixed;
-  bottom:10px;
-  right:10px;
-  border:10px solid;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border: 10px solid;
   border-radius: 50px;
 }
 
