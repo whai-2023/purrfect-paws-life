@@ -1,9 +1,6 @@
-import YellowSquare from './YellowSquare'
-import RedSquare from './RedSquare'
-import PurpleSquare from './PurpleSquare'
-import GreenSquare from './GreenSquare'
-import BlueSquare from './BlueSquare'
+import PawPrint from './PawPrint'
 import Footer from './Footer'
+import PopUp from './PopUp'
 
 import useGameStore from '../gameStore'
 
@@ -11,31 +8,32 @@ import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { getAllYellowSquares } from '../apis'
 
-import {
-  redData,
-  purpleData,
-  greenData,
-  blueData,
-  yellowSquares,
-} from '../lib/lib'
-
 import cat1 from '../public/catImage/cat1.jpg'
 import cat2 from '../public/catImage/cat2.jpg'
 
 export default function GameBoard() {
-  const { turnCount, activePlayer, players } = useGameStore()
+  const { activePlayer, players, setTreats } = useGameStore()
 
   const [player1Position, setPlayer1Position] = useState(1)
   const [player2Position, setPlayer2Position] = useState(1)
 
-  // const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
-  //   getAllYellowSquares()
-  // )
+  const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
+    getAllYellowSquares()
+  )
 
   useEffect(() => {
+    function addTreats() {
+      if (yellowSquares) {
+        activePlayer === 1
+          ? setTreats(yellowSquares[players[0].moveTotal].value)
+          : setTreats(yellowSquares[players[1].moveTotal].value)
+      }
+    }
+    addTreats()
     setPlayer1Position(players[0].moveTotal)
     setPlayer2Position(players[1].moveTotal)
-  }, [turnCount])
+    console.log(players, activePlayer)
+  }, [activePlayer])
 
   return (
     <>
@@ -46,64 +44,29 @@ export default function GameBoard() {
           height: '1800px',
         }}
       >
-        {purpleData.map((el) => {
-          return (
-            <PurpleSquare
-              key={`purple ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
+        {yellowSquares ? (
+          activePlayer === 1 ? (
+            <PopUp content={yellowSquares[player1Position - 1]} />
+          ) : (
+            <PopUp content={yellowSquares[player2Position - 1]} />
           )
-        })}
-        {blueData.map((el) => {
-          return (
-            <BlueSquare
-              key={`blue ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
-          )
-        })}
-        {redData.map((el) => {
-          return (
-            <RedSquare
-              key={`red ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
-          )
-        })}
+        ) : (
+          ''
+        )}
         {yellowSquares &&
           yellowSquares.map((el) => {
             return (
-              <YellowSquare
+              <PawPrint
                 key={el.id}
                 x={el.x}
                 y={el.y}
                 rot={el.rot}
-                content={`${el.id} ${el.input}`}
+                content={`${el.id} ${el.input} Treats: ${el.value}`}
                 player1={player1Position === el.id ? cat1 : ''}
                 player2={player2Position === el.id ? cat2 : ''}
               />
             )
           })}
-        {greenData.map((el) => {
-          return (
-            <GreenSquare
-              key={`green ${el.id}`}
-              x={el.x}
-              y={el.y}
-              rot={el.rot}
-              content={`${el.id} ${el.content}`}
-            />
-          )
-        })}
       </div>
       <Footer />
     </>
