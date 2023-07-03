@@ -33,6 +33,7 @@
     "express": "^4.17.2",
     "immer": "^10.0.2",
     "knex": "^2.4.2",
+    "react-audio-player": "^0.17.0",
     "react-wheel-of-prizes": "^1.0.9",
     "spin-wheel": "^4.1.1",
     "sqlite3": "^5.1.6",
