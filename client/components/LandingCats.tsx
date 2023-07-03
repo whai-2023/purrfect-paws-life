@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import catImage from '../public/catImage/Cat-icon.png'
 
+// we don't need this JSX.Element type, it's inferred
 export default function LandingCats(): JSX.Element {
   const [showSplash, setShowSplash] = useState(false)
 
   useEffect(() => {
+    // we can use setTimeout here instead of setInterval
+    // since we only want to run this once
     const timer = setInterval(() => {
       setShowSplash(true)
     }, 500)

@@ -1,6 +1,9 @@
 import request from 'superagent'
 import YellowSquare from '../../models/YellowSquare'
 
+// although these are unused, most of these functions don't use `res.body`
+// which means the place that calls these functions needs to use `.then(res => res.body)`
+// we should do that here instead
 export function getYellowSquareById(id: number) {
   return request.get(`/api/v1/yellow-squares/${id}`)
 }

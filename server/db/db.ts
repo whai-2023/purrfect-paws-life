@@ -24,6 +24,7 @@ export async function getAllYellowSquares(db = connection) {
 }
 
 export async function getChoiceById(id: number, db = connection) {
+  // this query seems like it returns an array of choices, but should be returning a single choice?
   const choices = await db('choices').where({ id }).select('choice1', 'choice2')
   return choices
 }

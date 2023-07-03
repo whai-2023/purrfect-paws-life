@@ -1,3 +1,7 @@
+// these imports are unused, remove them
+
+// actually, in saying that, it seems ESLint is not working properly
+// investigate and fix that up
 import { getOwnerById } from '../apis/index'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { ChangeEvent, FormEvent, useState } from 'react'
@@ -11,6 +15,12 @@ export default function Footer() {
     <div className="footer">
       <SpinningWheel />
       <div className="playerBox">
+        {/* activePlayer feels cumbersome to use,
+            we can at least make it more readable by using a variable name
+            e.g., activePlayerIndex = activePlayer - 1
+               or player = players[activePlayer - 1]
+               or player = players[activePlayerIndex]
+        */}
         <h2>{`Player: ${players[activePlayer - 1].name}`}</h2>
         <h2>{`Treats: ${players[activePlayer - 1].treats}`}</h2>
         <div className="icons">

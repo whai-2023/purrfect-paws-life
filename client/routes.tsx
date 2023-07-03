@@ -7,6 +7,7 @@ import {
 import App from './components/App'
 import Landing from './components/Landing'
 import GameBoard from './components/GameBoard'
+// purrrrrrrrge the comment
 // import ChooseCharacterPage from './components/ChooseCharacterPage'
 
 export const routes = createBrowserRouter(

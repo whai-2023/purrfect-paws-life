@@ -16,6 +16,10 @@ export default function Landing() {
     return () => clearInterval(timer)
   }, [])
 
+  // we should use an initialiser function for useState
+  // useState(() => getRandomColor()) or useState(getRandomColor)
+  // this is because getRandomColor is a function and will be called every time the component renders
+  // even though the value won't get used past the first render
   const [textColour, setTextColor] = useState(getRandomColor())
 
   return (
