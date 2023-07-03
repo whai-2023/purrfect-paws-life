@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom'
+import WinningPage from './WinningPage'
 function App() {
   return (
     <>
       <section>
-        <Outlet />
+        <WinningPage />
       </section>
     </>
   )
