@@ -1,8 +1,4 @@
-import YellowSquare from './YellowSquare'
-import RedSquare from './RedSquare'
-import PurpleSquare from './PurpleSquare'
-import GreenSquare from './GreenSquare'
-import BlueSquare from './BlueSquare'
+import PawPrint from './PawPrint'
 import Footer from './Footer'
 import PopUp from './PopUp'
 
@@ -11,14 +7,6 @@ import useGameStore from '../gameStore'
 import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { getAllYellowSquares } from '../apis'
-
-import {
-  redData,
-  purpleData,
-  greenData,
-  blueData,
-  yellowSquares,
-} from '../lib/lib'
 
 import cat1 from '../public/catImage/cat1.jpg'
 import cat2 from '../public/catImage/cat2.jpg'
@@ -29,9 +17,9 @@ export default function GameBoard() {
   const [player1Position, setPlayer1Position] = useState(1)
   const [player2Position, setPlayer2Position] = useState(1)
 
-  // const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
-  //   getAllYellowSquares()
-  // )
+  const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
+    getAllYellowSquares()
+  )
 
   useEffect(() => {
     function addTreats() {
@@ -68,7 +56,7 @@ export default function GameBoard() {
         {yellowSquares &&
           yellowSquares.map((el) => {
             return (
-              <YellowSquare
+              <PawPrint
                 key={el.id}
                 x={el.x}
                 y={el.y}

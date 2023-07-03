@@ -9,7 +9,7 @@ interface Props {
   player2: string
 }
 
-export default function YellowSquare(props: Props) {
+export default function PawPrint(props: Props) {
   const size = {
     x: '100px',
     y: '100px',
