@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import creamCat from '../public/catProfileimage/cat.png'
-import whiteCat from '../public/catProfileimage/whitecat.png'
+import creamCat from '/catProfileimage/cat.png'
+import whiteCat from '/catProfileimage/whitecat.png'
 
 import { Players } from '../../models/Players'
 

@@ -1,6 +1,6 @@
-import catImage from '../public/catProfileimage/cat.png'
-import fish from '../public/fish/fish.png'
-import catTower from '../public/catTower/catTower.png'
+import catImage from '/catProfileimage/cat.png'
+import fish from '/fish/fish.png'
+import catTower from '/catTower/catTower.png'
 import '../styles/scoreboard.css'
 
 export default function Scoreboard() {

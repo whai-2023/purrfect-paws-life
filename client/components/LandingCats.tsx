@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import catImage from '../public/catImage/Cat-icon.png'
+import catImage from '/catImage/Cat-icon.png'
 
 export default function LandingCats(): JSX.Element {
   const [showSplash, setShowSplash] = useState(false)
