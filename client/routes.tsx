@@ -8,6 +8,7 @@ import App from './components/App'
 import Landing from './components/Landing'
 import GameBoard from './components/GameBoard'
 import WinningPage from './components/WinningPage'
+import WinningPage from './components/WinningPage'
 
 export const routes = createBrowserRouter(
   createRoutesFromElements(

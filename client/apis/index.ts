@@ -1,12 +1,18 @@
 import request from 'superagent'
 import YellowSquare from '../../models/YellowSquare'
-
-export function getYellowSquareById(id: number) {
-  return request.get(`/api/v1/yellow-squares/${id}`)
-}
+import PawPrint from '../../models/PawPrint'
+import YellowPawPrint from '../../models/YellowPawPrint'
 
 export function getAllYellowSquares(): Promise<YellowSquare[]> {
   return request.get(`/api/v1/yellow-squares`).then((res) => res.body)
+}
+
+export function getAllPawPrints(): Promise<PawPrint[]> {
+  return request.get(`/api/v1/paw-prints`).then((res) => res.body)
+}
+
+export function getAllYellowPawPrints(): Promise<YellowPawPrint[]> {
+  return request.get(`/api/v1/yellow-paw-prints`).then((res) => res.body)
 }
 
 export function getOwnerById(id: number) {
