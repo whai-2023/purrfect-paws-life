@@ -55,23 +55,39 @@ export default function GameBoard() {
           height: '1800px',
         }}
       >
-        {yellowPawPrints &&
-          yellowPawPrints.map((el) => {
+        {pawPrints &&
+          pawPrints.map((el) => {
             return (
-              <PawPrint
-                key={el.id}
-                x={el.x}
-                y={el.y}
-                content={
-                  yellowPawPrintData &&
-                  (player1Space === el.id || player2Space === el.id)
-                    ? yellowPawPrintData[el.id]
-                    : null
-                }
-                debug={`ID: ${el.id} Type: ${el.type}Path: ${el.path} Space: ${el.space}`}
-                player1={player1Space === el.id ? cat1 : ''}
-                player2={player2Space === el.id ? cat2 : ''}
-              />
+              <>
+                {el.type === 'Yellow' &&
+                activePlayer === 1 &&
+                player1Space === el.space &&
+                player1Path === el.path ? (
+                  <PopUp content={yellowPawPrintData![player1Space]} />
+                ) : null}
+                {el.type === 'Yellow' &&
+                activePlayer === 1 &&
+                player2Space === el.space &&
+                player1Path === el.path ? (
+                  <PopUp content={yellowPawPrintData![player2Space]} />
+                ) : null}
+                <PawPrint
+                  key={el.id}
+                  x={el.x}
+                  y={el.y}
+                  debug={`ID: ${el.id} Type: ${el.type}Path: ${el.path} Space: ${el.space}`}
+                  player1={
+                    player1Space === el.space && player1Path === el.path
+                      ? cat1
+                      : ''
+                  }
+                  player2={
+                    player2Space === el.space && player1Path === el.path
+                      ? cat2
+                      : ''
+                  }
+                />
+              </>
             )
           })}
       </div>
