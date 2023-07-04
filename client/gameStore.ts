@@ -2,12 +2,16 @@ import { create } from 'zustand'
 import { immer } from 'zustand/middleware/immer'
 import { GameState } from '../models/GameState'
 import { PlayerState } from '../models/PlayerState'
+import { CatTower } from '../models/CatTower'
+import { Owner } from '../models/Owner'
 
 type Actions = {
   setTurnStats: (turnIncrement: number, moveAmount: number) => void
   setTreats: (treats: number) => void
   setPath: (path: number) => void
   setChoice: (type: keyof PlayerState['choices'], choice: string) => void
+  setCatTower: (catTower: CatTower) => void
+  setOwner: (owner: Owner) => void
 }
 
 const initialGameState: GameState = {
@@ -16,7 +20,7 @@ const initialGameState: GameState = {
       id: 1,
       name: 'Aiden',
       path: 1,
-      moveTotal: 1,
+      moveTotal: 8,
       treats: 0,
       owner: [],
       catTower: [],
@@ -26,7 +30,7 @@ const initialGameState: GameState = {
       id: 2,
       name: 'Sarah',
       path: 1,
-      moveTotal: 1,
+      moveTotal: 8,
       treats: 0,
       owner: [],
       catTower: [],
@@ -68,6 +72,20 @@ const useGameStore = create(
         state.activePlayer === 1
           ? (state.players[0].choices[type] = choice)
           : (state.players[1].choices[type] = choice)
+      })
+    },
+    setCatTower: (catTower) => {
+      set((state) => {
+        state.activePlayer === 1
+          ? state.players[0].catTower.push(catTower)
+          : state.players[1].catTower.push(catTower)
+      })
+    },
+    setOwner: (owner) => {
+      set((state) => {
+        state.activePlayer === 1
+          ? state.players[0].owner.push(owner)
+          : state.players[1].owner.push(owner)
       })
     },
   }))
