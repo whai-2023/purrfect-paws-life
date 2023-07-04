@@ -35,7 +35,6 @@
     "knex": "^2.4.2",
     "react-audio-player": "^0.17.0",
     "react-wheel-of-prizes": "^1.0.9",
-    "semantic-ui-react": "^2.1.4",
     "spin-wheel": "^4.1.1",
     "sqlite3": "^5.1.6",
     "superagent": "7.1.1",

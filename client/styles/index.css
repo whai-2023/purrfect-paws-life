@@ -102,14 +102,30 @@ body {
   line-height: 1.5;
 }
 
+.footerPopup {
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: #f3faab;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  gap: 2px;
+  line-height: 1.5;
+  padding: 5px;
+  bottom: 80px;
+}
+
 .catTowerIcon {
   width: 50px;
   height: 50px;
+  margin: 10px;
 }
 
 .ownerIcon {
   width: 50px;
   height: 50px;
+  margin: 10px;
 }
 
 /* ---------- POPUP BUTTON ---------------------------*/
