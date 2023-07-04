@@ -2,6 +2,8 @@ import '../styles/index.css'
 import WheelComponent from 'react-wheel-of-prizes'
 import useGameStore from '../gameStore'
 
+import useSound from 'use-sound'
+
 const SpinningWheel = () => {
   const { setTurnStats } = useGameStore()
 
@@ -12,9 +14,18 @@ const SpinningWheel = () => {
     setTurnStats(1, Number(winner))
   }
 
+  const [play] = useSound('client/public/audio/sound-effects/wheel-spin.wav', {
+    volume: 0.5,
+  })
+
+  const handleClick = () => {
+    return play()
+  }
+
   return (
-    <div className="wheel">
+    <div className="wheel" onClick={handleClick}>
       <WheelComponent
+        onClick
         segments={segments}
         segColors={segColors}
         winningSegment="won 10"
@@ -24,8 +35,8 @@ const SpinningWheel = () => {
         buttonText="SPIN"
         isOnlyOnce={false}
         size={150}
-        upDuration={getRandomInt(200, 400)}
-        downDuration={getRandomInt(400, 600)}
+        upDuration={getRandomInt(400, 600)}
+        downDuration={getRandomInt(600, 800)}
         fontFamily="Arial"
       />
     </div>
