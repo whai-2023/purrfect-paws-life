@@ -1,19 +1,23 @@
-import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Scoreboard from './Scoreboard'
+import Confetti from 'react-confetti'
+import '../styles/winningpage.css'
 
 export default function WinningPage() {
-  const [showMessage, setShowMessage] = useState(false)
-
-  useEffect(() => {
-    setShowMessage(true)
-  }, [])
-
   return (
     <div>
-      {showMessage && (
-        <div>
-          <h1>Congratulations! Player 1 has won the game!</h1>
+      <Confetti />
+      <div className="confetti">
+        <h2>The Winner is Player 1!</h2>
+      </div>
+      <div>
+        <Scoreboard />
+      </div>
+      <Link to={'/'}>
+        <div className="buttonstyle">
+          <button className="button">Play Again!</button>
         </div>
-      )}
+      </Link>
     </div>
   )
 }
