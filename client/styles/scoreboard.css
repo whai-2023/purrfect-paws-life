@@ -1,0 +1,52 @@
+.image {
+  width: 200px;
+  height: 200px;
+  border-radius: 300px;
+}
+
+.flex {
+  display: flex;
+  align-items: flex-start; /* Align items vertically at the top */
+}
+
+.name {
+  font-size: 18px;
+  margin-bottom: 10px; /* Add spacing between image and name */
+  color:#f6f7d7;
+  font-family: 'Aclonica'
+}
+
+#profile {
+  max-width: 768px;
+  margin: 1rem auto;
+  padding: 2rem 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+} 
+
+.info {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start; /* Align items vertically at the top */
+}
+
+.child1,
+.child2 {
+  flex: 1; /* Distribute available space evenly */
+  padding: 0 1rem; /* Adjust the padding as needed */
+  font-size:30px;
+  text-align: center;
+  color:#f6f7d7;
+  font-family: 'Aclonica'
+}
+
+.fishImage{
+  width: 100px;
+  height: 100px;
+}
+
+.catTower{
+  width: 100px;
+  height: 100px;
+}
