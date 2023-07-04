@@ -1,6 +1,10 @@
-.app {
+.app-container {
   width: 100%;
   display: flex;
+}
+
+main {
+  width: 100%;
 }
 
 .game-square {
@@ -149,3 +153,4 @@ body {
     padding: 0 25px;
   }
 }
+

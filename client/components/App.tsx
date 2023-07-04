@@ -1,11 +1,12 @@
-import ReactAudioPlayer from 'react-audio-player'
+// import ReactAudioPlayer from 'react-audio-player'
 
 import { Outlet } from 'react-router-dom'
+import WinningPage from './WinningPage'
 function App() {
   return (
-    <>
-      <section>
-        <div className="audioPlayer">
+    <main>
+      <WinningPage />
+      {/* <div className="audioPlayer">
           <ReactAudioPlayer
             src={'client/public/audio/silly_chicken.mp3'}
             autoPlay
@@ -14,10 +15,9 @@ function App() {
             //TO DO: Remove controls and try to make the audioPlayer play automatically
             controls
           />
-        </div>
-        <Outlet />
-      </section>
-    </>
+        </div> */}
+      {/* <Outlet /> */}
+    </main>
   )
 }
 
