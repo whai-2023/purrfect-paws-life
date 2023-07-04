@@ -1,9 +1,11 @@
+import YellowPawPrint from '../../models/YellowPawPrint'
 import PopUp from './PopUp'
 
 interface Props {
   x: number
   y: number
-  content: string
+  debug: string
+  content: YellowPawPrint | null
   player1: string
   player2: string
 }
@@ -22,10 +24,10 @@ export default function PawPrint(props: Props) {
         height: size.y,
         left: `${props.x}px`,
         bottom: `${props.y}px`,
-        backgroundColor: 'yellow',
       }}
     >
-      <p>{props.content}</p>
+      {props.content ? <PopUp content={props.content} /> : null}
+      <p>{props.debug}</p>
       {props.player1 ? 'Sarah' : ''}
       {/* <img src={props.player1} alt="" /> */}
       {props.player2 ? 'Aiden' : ''}

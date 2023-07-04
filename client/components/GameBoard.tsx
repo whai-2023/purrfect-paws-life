@@ -16,18 +16,21 @@ import cat2 from '../public/catImage/cat2.jpg'
 export default function GameBoard() {
   const { activePlayer, players, setTreats } = useGameStore()
 
-  const [player1Position, setPlayer1Position] = useState(1)
-  const [player2Position, setPlayer2Position] = useState(1)
+  const [player1Space, setPlayer1Space] = useState(1)
+  const [player2Space, setPlayer2Space] = useState(1)
+
+  const [player1Path, setPlayer1Path] = useState(1)
+  const [player2Path, setPlayer2Path] = useState(1)
 
   const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
     getAllYellowSquares()
   )
-
   const { data: yellowPawPrintData } = useQuery(['yellowPawPrintData'], () =>
     getShuffledYellowPawPrintData()
   )
-
   const { data: pawPrints } = useQuery(['pawPrints'], () => getAllPawPrints())
+
+  const yellowPawPrints = pawPrints?.filter((el) => el.type === 'Yellow')
 
   useEffect(() => {
     function addTreats() {
@@ -38,8 +41,8 @@ export default function GameBoard() {
       }
     }
     addTreats()
-    setPlayer1Position(players[0].moveTotal)
-    setPlayer2Position(players[1].moveTotal)
+    setPlayer1Space(players[0].moveTotal)
+    setPlayer2Space(players[1].moveTotal)
     console.log(players, activePlayer)
   }, [activePlayer])
 
@@ -52,16 +55,22 @@ export default function GameBoard() {
           height: '1800px',
         }}
       >
-        {pawPrints &&
-          pawPrints.map((pawPrint) => {
+        {yellowPawPrints &&
+          yellowPawPrints.map((el) => {
             return (
               <PawPrint
-                key={pawPrint.id}
-                x={pawPrint.x}
-                y={pawPrint.y}
-                content={`ID: ${pawPrint.id} Type: ${pawPrint.type}Path: ${pawPrint.path} Space: ${pawPrint.space}`}
-                player1={player1Position === pawPrint.id ? cat1 : ''}
-                player2={player2Position === pawPrint.id ? cat2 : ''}
+                key={el.id}
+                x={el.x}
+                y={el.y}
+                content={
+                  yellowPawPrintData &&
+                  (player1Space === el.id || player2Space === el.id)
+                    ? yellowPawPrintData[el.id]
+                    : null
+                }
+                debug={`ID: ${el.id} Type: ${el.type}Path: ${el.path} Space: ${el.space}`}
+                player1={player1Space === el.id ? cat1 : ''}
+                player2={player2Space === el.id ? cat2 : ''}
               />
             )
           })}

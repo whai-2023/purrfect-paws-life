@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import YellowSquare from '../../models/YellowSquare'
+import YellowPawPrint from '../../models/YellowPawPrint'
 
 type PopupProps = {
-  content: YellowSquare
+  content: YellowPawPrint
 }
 
 function PopUp(props: PopupProps) {

@@ -68,16 +68,12 @@ body {
 }
 
 .Popup-container {
-  /* background-color: red; */
   position: absolute;
-  display: flex;
+  top: 50%;
+  left: 50%;
   justify-content: center;
   align-content: center;
   align-items: center;
-  /* left: 30%;
-  right: 30%;
-  bottom: 30%;
-  top: 30%; */
   width: 100vw;
   height: 100vh;
   z-index: 3;
