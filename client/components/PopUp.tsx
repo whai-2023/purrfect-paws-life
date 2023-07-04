@@ -13,14 +13,18 @@ function PopUp(props: PopupProps) {
   }, [props.content])
 
   return (
-    <div className="Popup">
+    <>
       {isOpen && (
-        <div>
-          <div>{`${props.content.input} You get ${props.content.value} treats!`}</div>
-          <button onClick={() => setIsOpen(false)}>Close Pop-up</button>
+        <div className="Popup-container">
+          <div className="Popup">
+            <div>{`${props.content.input} You get ${props.content.value} treats!`}</div>
+            <button className="PopupButton" onClick={() => setIsOpen(false)}>
+              Close Pop-up
+            </button>
+          </div>
         </div>
       )}
-    </div>
+    </>
   )
 }
 
