@@ -39,7 +39,7 @@ export default function SplashPageForm() {
             placeholder="Enter player name"
           />
           <button className="addPlayerButton" type="submit">
-            Add Player 1!
+            Add
           </button>
         </div>
         <div className="info"></div>
@@ -55,7 +55,7 @@ export default function SplashPageForm() {
             placeholder="Enter player name"
           />
           <button className="addPlayerButton" type="submit">
-            Add Player 2!
+            Add
           </button>
         </div>
       </div>

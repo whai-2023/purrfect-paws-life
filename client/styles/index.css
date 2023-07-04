@@ -27,26 +27,32 @@ main {
   padding:20px;
   border-radius: 100px;
   font-size: 30px;
-  background-color:#ff165d;
+  background-color:#f3faab;
+  font-family: 'gaegu';
 }
 
-.addPlayerbutton {
-  color: #f3faab;
-  background-color: #ff165d;
+.addPlayerButton {
+  color: black;
+  background-color: #f3faab;
   border-radius: 100px;
   font-size: 15px;
   padding: 8px 10px;
   cursor: pointer;
+  font-family: 'gaegu';
 }
 
 .title1 {
   flex: 1;
   font-size:100px;
+  border: solid;
+  border-radius: 100px;
 }
 
 .title2 {
   flex: 1;
   font-size:80px;
+  border:solid;
+  border-radius: 100px;
 }
 
 .splashForms {
