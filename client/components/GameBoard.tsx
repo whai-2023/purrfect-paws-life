@@ -30,8 +30,6 @@ export default function GameBoard() {
   )
   const { data: pawPrints } = useQuery(['pawPrints'], () => getAllPawPrints())
 
-  const yellowPawPrints = pawPrints?.filter((el) => el.type === 'Yellow')
-
   useEffect(() => {
     function addTreats() {
       if (yellowSquares) {
@@ -68,7 +66,7 @@ export default function GameBoard() {
                 {el.type === 'Yellow' &&
                 activePlayer === 1 &&
                 player2Space === el.space &&
-                player1Path === el.path ? (
+                player2Path === el.path ? (
                   <PopUp content={yellowPawPrintData![player2Space]} />
                 ) : null}
                 <PawPrint
