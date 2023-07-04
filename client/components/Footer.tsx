@@ -7,6 +7,8 @@ import useGameStore from '../gameStore'
 export default function Footer() {
   const { players, activePlayer } = useGameStore()
 
+  const [isShown, setIsShown] = useState(false)
+
   return (
     <div className="footer">
       <SpinningWheel />
@@ -17,10 +19,17 @@ export default function Footer() {
           {Array.isArray(players[activePlayer - 1].catTower)
             ? players[activePlayer - 1].catTower.map((el) => {
                 return (
-                  <img
-                    className="houseIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
-                  />
+                  <>
+                    <img
+                      onMouseEnter={() => setIsShown(true)}
+                      onMouseLeave={() => setIsShown(false)}
+                      className="catTowerIcon"
+                      src="client/public/catImage/cat-tower-icon.png"
+                    />
+                    {isShown && (
+                      <div className="footerPopup">Plastic $10</div> // HARD CODED FOR NOW
+                    )}
+                  </>
                 )
               })
             : ''}
@@ -29,10 +38,17 @@ export default function Footer() {
           {Array.isArray(players[activePlayer - 1].catTower)
             ? players[activePlayer - 1].owner.map((el) => {
                 return (
-                  <img
-                    className="ownerIcon"
-                    src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
-                  />
+                  <>
+                    <img
+                      onMouseEnter={() => setIsShown(true)}
+                      onMouseLeave={() => setIsShown(false)}
+                      className="ownerIcon"
+                      src="client/public/catImage/owner-icon.png"
+                    />
+                    {isShown && (
+                      <div className="footerPopup">Aiden $500</div> // HARD CODED FOR NOW
+                    )}
+                  </>
                 )
               })
             : ''}

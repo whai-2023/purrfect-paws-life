@@ -107,12 +107,33 @@ body {
   line-height: 1.5;
 }
 
-.houseIcon {
-  width: 50px;
-  height: 50px;
+.footerPopup {
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: #f3faab;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  gap: 2px;
+  line-height: 1.5;
+  padding: 5px;
+  bottom: 80px;
 }
 
-/* ---------- BUTTON ---------------------------*/
+.catTowerIcon {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.ownerIcon {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+/* ---------- POPUP BUTTON ---------------------------*/
 
 .PopupButton {
   background-color: #f6f7d7;
