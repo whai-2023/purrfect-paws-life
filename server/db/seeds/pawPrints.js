@@ -236,7 +236,7 @@ exports.seed = async function (knex) {
       y: 710,
       type: 'Finish',
       path: 1,
-      space: 2,
+      space: 29,
     },
     {
       id: 31,
@@ -365,7 +365,7 @@ exports.seed = async function (knex) {
       y: 180,
       type: 'Pay day',
       path: 2,
-      space: 14,
+      space: 15,
     },
     {
       id: 47,

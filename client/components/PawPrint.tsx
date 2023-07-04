@@ -3,7 +3,6 @@ import PopUp from './PopUp'
 interface Props {
   x: number
   y: number
-  rot: number
   content: string
   player1: string
   player2: string
@@ -23,7 +22,6 @@ export default function PawPrint(props: Props) {
         height: size.y,
         left: `${props.x}px`,
         bottom: `${props.y}px`,
-        transform: `rotate(${props.rot}deg)`,
         backgroundColor: 'yellow',
       }}
     >

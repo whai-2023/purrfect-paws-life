@@ -6,7 +6,9 @@ import useGameStore from '../gameStore'
 
 import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
-import { getAllYellowSquares } from '../apis'
+import { getAllYellowSquares, getAllPawPrints } from '../apis'
+
+import getShuffledYellowPawPrintData from '../lib/lib'
 
 import cat1 from '../public/catImage/cat1.jpg'
 import cat2 from '../public/catImage/cat2.jpg'
@@ -20,6 +22,12 @@ export default function GameBoard() {
   const { data: yellowSquares } = useQuery(['yellowSquare'], () =>
     getAllYellowSquares()
   )
+
+  const { data: yellowPawPrintData } = useQuery(['yellowPawPrintData'], () =>
+    getShuffledYellowPawPrintData()
+  )
+
+  const { data: pawPrints } = useQuery(['pawPrints'], () => getAllPawPrints())
 
   useEffect(() => {
     function addTreats() {
@@ -44,26 +52,16 @@ export default function GameBoard() {
           height: '1800px',
         }}
       >
-        {yellowSquares ? (
-          activePlayer === 1 ? (
-            <PopUp content={yellowSquares[player1Position - 1]} />
-          ) : (
-            <PopUp content={yellowSquares[player2Position - 1]} />
-          )
-        ) : (
-          ''
-        )}
-        {yellowSquares &&
-          yellowSquares.map((el) => {
+        {pawPrints &&
+          pawPrints.map((pawPrint) => {
             return (
               <PawPrint
-                key={el.id}
-                x={el.x}
-                y={el.y}
-                rot={el.rot}
-                content={`${el.id} ${el.input} Treats: ${el.value}`}
-                player1={player1Position === el.id ? cat1 : ''}
-                player2={player2Position === el.id ? cat2 : ''}
+                key={pawPrint.id}
+                x={pawPrint.x}
+                y={pawPrint.y}
+                content={`ID: ${pawPrint.id} Type: ${pawPrint.type}Path: ${pawPrint.path} Space: ${pawPrint.space}`}
+                player1={player1Position === pawPrint.id ? cat1 : ''}
+                player2={player2Position === pawPrint.id ? cat2 : ''}
               />
             )
           })}
