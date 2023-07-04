@@ -29,9 +29,9 @@ export default function PawPrint(props: Props) {
     >
       <p>{props.content}</p>
       {props.player1 ? 'Sarah' : ''}
-      <img src={props.player1} alt="" />
+      <img className="characterModel" src={props.player1} alt="" />
       {props.player2 ? 'Aiden' : ''}
-      <img src={props.player2} alt="" />
+      <img className="characterModel" src={props.player2} alt="" />
     </div>
   )
 }

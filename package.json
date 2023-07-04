@@ -42,6 +42,7 @@
     "spin-wheel": "^4.1.1",
     "sqlite3": "^5.1.6",
     "superagent": "7.1.1",
+    "use-sound": "^4.0.1",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
