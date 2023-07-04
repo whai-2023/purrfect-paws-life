@@ -1,6 +1,10 @@
-.app {
+.app-container {
   width: 100%;
   display: flex;
+}
+
+main {
+  width: 100%;
 }
 
 .game-square {
@@ -34,6 +38,11 @@ body {
   }
 }
 
+.characterModel {
+  height: 100px;
+  width: 120px;
+}
+
 .wheel {
   font-size: 35px;
   position: fixed;
@@ -44,9 +53,10 @@ body {
 }
 
 .audioPlayer {
-  /* position: fixed; */
-  /* top: 10px;
-  left: 10px; */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
 }
 
 .footer {
@@ -68,16 +78,11 @@ body {
 }
 
 .Popup-container {
-  /* background-color: red; */
   position: absolute;
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
-  /* left: 30%;
-  right: 30%;
-  bottom: 30%;
-  top: 30%; */
   width: 100vw;
   height: 100vh;
   z-index: 3;
@@ -165,3 +170,4 @@ body {
     padding: 0 25px;
   }
 }
+

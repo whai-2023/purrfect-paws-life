@@ -1,6 +1,6 @@
 import { PlayerState } from './PlayerState'
 
-export type GameState = {
+export interface GameState {
   players: PlayerState[]
   activePlayer: number
   turnCount: number
