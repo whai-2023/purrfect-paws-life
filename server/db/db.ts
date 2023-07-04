@@ -15,12 +15,16 @@ export async function getAllCatTowers(db = connection) {
   return db('cat-towers').select('*')
 }
 
-export async function getYellowSquareById(id: number, db = connection) {
-  return db('yellow-squares').where({ id }).first()
-}
-
 export async function getAllYellowSquares(db = connection) {
   return db('yellow-squares').select('*')
+}
+
+export async function getAllPawPrints(db = connection) {
+  return db('paw-prints').select('*')
+}
+
+export async function getAllYellowPawPrints(db = connection) {
+  return db('yellow-paw-prints').select('*')
 }
 
 export async function getChoiceById(id: number, db = connection) {
