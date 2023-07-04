@@ -46,6 +46,7 @@ main {
   font-size:100px;
   border: solid;
   border-radius: 100px;
+  background-color: #f3faab;
 }
 
 .title2 {
@@ -53,6 +54,7 @@ main {
   font-size:80px;
   border:solid;
   border-radius: 100px;
+  background-color: #f3faab;
 }
 
 .splashForms {
@@ -70,6 +72,7 @@ main {
   max-height: 100vh;
   background-size: 3710px 900px;
   border: none; /* Remove border */
+  background-repeat: no-repeat;
 }
 
 @keyframes flashing {
