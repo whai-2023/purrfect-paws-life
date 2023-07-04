@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import SplashPageForm from './SplashPageForm'
+import '../styles/index.css'
 
 import LandingCats from './LandingCats'
 
@@ -19,24 +21,20 @@ export default function Landing() {
   const [textColour, setTextColor] = useState(getRandomColor())
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        paddingLeft: 235,
-        fontSize: 100,
-      }}
-    >
+    <div>
       <LandingCats />
-      <div>
+      <div className="titleText">
+        <h1 className="title1" style={{ color: textColour }}>
+          Purrfect Paws Life
+        </h1>
         <Link to="/game" style={{ textDecoration: 'none' }}>
-          <h1 style={{ color: textColour, backgroundColor: 'white' }}>
-            Purrfect Paws Life
-          </h1>
+          <h2 className="title2" style={{ color: textColour }}>
+            Start Game
+          </h2>
         </Link>
+        <div className="splashForms">
+          <SplashPageForm />
+        </div>
       </div>
     </div>
   )
