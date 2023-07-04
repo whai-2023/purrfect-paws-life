@@ -242,7 +242,7 @@ exports.seed = async function (knex) {
       id: 31,
       x: 305,
       y: 250,
-      type: 'Choose Owner',
+      type: 'Choose owner',
       path: 2,
       space: 1,
     },
@@ -385,9 +385,9 @@ exports.seed = async function (knex) {
     },
     {
       id: 49,
-      x: 2700, //sideways
-      y: 640, // up down
-      type: 'Choice invest',
+      x: 2700,
+      y: 640,
+      type: 'Choice kittens',
       path: 1,
       space: 23,
     },

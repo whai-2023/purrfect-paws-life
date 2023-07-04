@@ -46,7 +46,11 @@ exports.seed = async function (knex) {
       input: 'Owner forgets they already feed you. Two dinners!',
       value: 10,
     },
-
+    {
+      id: 9,
+      input: 'You have a nice nap in the sun.',
+      value: 5,
+    },
     {
       id: 10,
       input: 'You wake your owner up at night...',

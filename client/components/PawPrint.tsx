@@ -1,6 +1,3 @@
-import YellowPawPrint from '../../models/YellowPawPrint'
-import PopUp from './PopUp'
-
 interface Props {
   x: number
   y: number
@@ -26,10 +23,18 @@ export default function PawPrint(props: Props) {
       }}
     >
       <p>{props.debug}</p>
-      {props.player1 ? 'Sarah' : ''}
-      <img className="characterModel" src={props.player1} alt="" />
-      {props.player2 ? 'Aiden' : ''}
-      <img className="characterModel" src={props.player2} alt="" />
+      {props.player1 && (
+        <>
+          Aiden
+          <img className="characterModel" src={props.player1} alt="" />
+        </>
+      )}
+      {props.player2 && (
+        <>
+          Sarah
+          <img className="characterModel" src={props.player2} alt="" />
+        </>
+      )}
     </div>
   )
 }
