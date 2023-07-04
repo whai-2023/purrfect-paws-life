@@ -1,6 +1,10 @@
-.app {
+.app-container {
   width: 100%;
   display: flex;
+}
+
+main {
+  width: 100%;
 }
 
 .game-square {
@@ -32,6 +36,11 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+.characterModel {
+  height: 100px;
+  width: 120px;
 }
 
 .wheel {
@@ -144,3 +153,4 @@ body {
     padding: 0 25px;
   }
 }
+

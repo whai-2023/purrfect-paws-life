@@ -10,8 +10,8 @@ import { getAllYellowSquares, getAllPawPrints } from '../apis'
 
 import getShuffledYellowPawPrintData from '../lib/lib'
 
-import cat1 from '../public/catImage/cat1.jpg'
-import cat2 from '../public/catImage/cat2.jpg'
+import cat1 from '../public/catImage/player1alt.png'
+import cat2 from '../public/catImage/player2alt.png'
 
 export default function GameBoard() {
   const { activePlayer, players, setTreats } = useGameStore()
