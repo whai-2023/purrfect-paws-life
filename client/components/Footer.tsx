@@ -24,7 +24,7 @@ export default function Footer() {
                       onMouseEnter={() => setIsShown(true)}
                       onMouseLeave={() => setIsShown(false)}
                       className="catTowerIcon"
-                      src="client/public/catImage/cat-tower-icon.png"
+                      src="catImage/cat-tower-icon.png"
                     />
                     {isShown && (
                       <div className="footerPopup">Plastic $10</div> // HARD CODED FOR NOW
@@ -36,19 +36,19 @@ export default function Footer() {
         </div>
         <div className="icons">
           {Array.isArray(players[activePlayer - 1].catTower)
-            ? players[activePlayer - 1].owner.map((el) => {
+            ? players[activePlayer - 1].owner.map((el, i) => {
                 return (
-                  <>
+                  <div key={i + activePlayer}>
                     <img
                       onMouseEnter={() => setIsShown(true)}
                       onMouseLeave={() => setIsShown(false)}
                       className="ownerIcon"
-                      src="client/public/catImage/owner-icon.png"
+                      src="catImage/owner-icon.png"
                     />
                     {isShown && (
                       <div className="footerPopup">Aiden $500</div> // HARD CODED FOR NOW
                     )}
-                  </>
+                  </div>
                 )
               })
             : ''}

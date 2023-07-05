@@ -8,7 +8,7 @@ import PopUpChooseCatTower from './PopUpChooseCatTower'
 import useGameStore from '../gameStore'
 
 import { useQuery } from '@tanstack/react-query'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { getAllCatTowers, getAllOwners, getAllPawPrints } from '../apis'
 
@@ -68,7 +68,6 @@ export default function GameBoard() {
       }
     }
     addYellowTreats()
-    console.log(players, activePlayer)
   }, [activePlayer])
 
   if (
@@ -97,6 +96,7 @@ export default function GameBoard() {
   return (
     <>
       <div
+        key={'Gameboard'}
         className="game-board"
         style={{
           width: '3710px',
@@ -112,14 +112,20 @@ export default function GameBoard() {
                 activePlayer === 1 &&
                 player1Space === el.space &&
                 player1Path === el.path ? (
-                  <PopUp key={i} content={yellowPawPrintData![el.space]} />
+                  <PopUp
+                    key={getRandomInt(1, 10000000)}
+                    content={yellowPawPrintData![el.space]}
+                  />
                 ) : null}
 
                 {el.type === 'Yellow' &&
                 activePlayer === 2 &&
                 player2Space === el.space &&
                 player2Path === el.path ? (
-                  <PopUp key={i} content={yellowPawPrintData![el.space]} />
+                  <PopUp
+                    key={getRandomInt(1, 10000000)}
+                    content={yellowPawPrintData![el.space]}
+                  />
                 ) : null}
 
                 {/* renders pop ups for red 'choices' */}
@@ -128,7 +134,7 @@ export default function GameBoard() {
                 player1Space === el.space &&
                 player1Path === el.path ? (
                   <PopUpChoice
-                    key={i}
+                    key={getRandomInt(1, 10000000)}
                     choiceType={el.type}
                     content={`${players[activePlayer - 1].name}${
                       choiceData[el.type.split(' ')[1] as keyof Choices].content
@@ -147,7 +153,7 @@ export default function GameBoard() {
                 player2Space === el.space &&
                 player2Path === el.path ? (
                   <PopUpChoice
-                    key={i}
+                    key={getRandomInt(1, 10000000)}
                     choiceType={el.type}
                     content={`${players[activePlayer - 1].name}${
                       choiceData[el.type.split(' ')[1] as keyof Choices].content
@@ -167,7 +173,7 @@ export default function GameBoard() {
                 player1Space === el.space &&
                 player1Path === el.path ? (
                   <PopUpChooseCatTower
-                    key={i}
+                    key={getRandomInt(1, 10000000)}
                     catTowers={[
                       catTowerData![getRandomInt(0, 4)],
                       catTowerData![getRandomInt(5, 9)],
@@ -180,7 +186,7 @@ export default function GameBoard() {
                 player2Space === el.space &&
                 player2Path === el.path ? (
                   <PopUpChooseCatTower
-                    key={i}
+                    key={getRandomInt(1, 10000000)}
                     catTowers={[
                       catTowerData![getRandomInt(0, 4)],
                       catTowerData![getRandomInt(5, 9)],
@@ -194,7 +200,7 @@ export default function GameBoard() {
                 player1Space === el.space &&
                 player1Path === el.path ? (
                   <PopUpChooseOwner
-                    key={i}
+                    key={getRandomInt(1, 10000000)}
                     owners={[
                       ownerData![getRandomInt(0, 1)],
                       ownerData![getRandomInt(2, 4)],
@@ -207,7 +213,7 @@ export default function GameBoard() {
                 player2Space === el.space &&
                 player2Path === el.path ? (
                   <PopUpChooseOwner
-                    key={i}
+                    key={getRandomInt(1, 10000000)}
                     owners={[
                       ownerData![getRandomInt(0, 1)],
                       ownerData![getRandomInt(2, 4)],
@@ -217,7 +223,7 @@ export default function GameBoard() {
 
                 {/* renders all pawprints */}
                 <PawPrint
-                  key={i}
+                  key={getRandomInt(1, 10000000)}
                   x={el.x}
                   y={el.y}
                   debug={`ID: ${el.id} Type: ${el.type}Path: ${
