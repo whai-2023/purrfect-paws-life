@@ -17,7 +17,7 @@ const SpinningWheel = () => {
     checkPosition(players[activePlayer - 1], Number(winner))
   }
 
-  const [play] = useSound('client/public/audio/sound-effects/wheel-spin.wav', {
+  const [play] = useSound('audio/sound-effects/wheel-spin.wav', {
     volume: 0.5,
   })
 

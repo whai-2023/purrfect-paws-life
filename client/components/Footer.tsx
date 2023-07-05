@@ -1,6 +1,4 @@
-import { getOwnerById } from '../apis/index'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { ChangeEvent, FormEvent, useState } from 'react'
+import { useState } from 'react'
 import SpinningWheel from './SpinningWheel'
 import useGameStore from '../gameStore'
 
@@ -13,7 +11,7 @@ export default function Footer() {
     <div className="footer">
       <SpinningWheel />
       <div className="playerBox">
-        <h2>{`Player: ${players[activePlayer - 1].name}`}</h2>
+        <h2>{`Player ${activePlayer}: ${players[activePlayer - 1].name}`}</h2>
         <h2>{`Treats: ${players[activePlayer - 1].treats}`}</h2>
         <div className="icons">
           {Array.isArray(players[activePlayer - 1].catTower)
@@ -27,7 +25,7 @@ export default function Footer() {
                       src="catImage/cat-tower-icon.png"
                     />
                     {isShown && (
-                      <div className="footerPopup">Plastic $10</div> // HARD CODED FOR NOW
+                      <div className="footerPopup">{`${el.material} $${el.value}`}</div> // HARD CODED FOR NOW
                     )}
                   </>
                 )
@@ -35,7 +33,7 @@ export default function Footer() {
             : ''}
         </div>
         <div className="icons">
-          {Array.isArray(players[activePlayer - 1].catTower)
+          {Array.isArray(players[activePlayer - 1].owner)
             ? players[activePlayer - 1].owner.map((el, i) => {
                 return (
                   <div key={i + activePlayer}>
@@ -46,7 +44,7 @@ export default function Footer() {
                       src="catImage/owner-icon.png"
                     />
                     {isShown && (
-                      <div className="footerPopup">Aiden $500</div> // HARD CODED FOR NOW
+                      <div className="footerPopup">{`${el.name} $${el.allowance}`}</div> // HARD CODED FOR NOW
                     )}
                   </div>
                 )

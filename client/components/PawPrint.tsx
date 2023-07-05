@@ -22,16 +22,14 @@ export default function PawPrint(props: Props) {
         bottom: `${props.y}px`,
       }}
     >
-      <p>{props.debug}</p>
+      {/* <p>{props.debug}</p> */}
       {props.player1 && (
         <>
-          Aiden
           <img className="characterModel" src={props.player1} alt="" />
         </>
       )}
       {props.player2 && (
         <>
-          Sarah
           <img className="characterModel" src={props.player2} alt="" />
         </>
       )}

@@ -15,7 +15,11 @@ main {
 .characterModel {
   height: 50px;
   width: 60px;
-  align-content: center;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 body {
