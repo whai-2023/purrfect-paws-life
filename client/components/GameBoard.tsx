@@ -19,8 +19,8 @@ import { choiceData } from '../lib/choiceData'
 
 import { Choices } from '../../models/Choices'
 
-import cat1 from '../public/catImage/player1alt.png'
-import cat2 from '../public/catImage/player2alt.png'
+import cat1 from '/catImage/player1alt.png'
+import cat2 from '/catImage/player2alt.png'
 
 export default function GameBoard() {
   // Zustand states accessed from GameStore / GameState
