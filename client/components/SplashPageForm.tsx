@@ -24,6 +24,17 @@ export default function SplashPageForm() {
         },
       }
     })
+    console.log('name')
+  }
+
+  const handleSubmitPlayer1 = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log('Add button clicked!', players.player1.name)
+  }
+
+  const handleSubmitPlayer2 = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    console.log('Add button clicked!', players.player2.name)
   }
 
   return (
@@ -31,32 +42,38 @@ export default function SplashPageForm() {
       <div className="flex">
         <div className="item">
           <img className="image" src={creamCat} alt="Cat" />
-          <input
-            className="input"
-            type="text"
-            value={players.player1.name}
-            onChange={(e) => handleNameChange('player1', e.target.value)}
-            placeholder="Enter player name"
-          />
-          <button className="addPlayerButton" type="submit">
-            Add
-          </button>
+          <form onSubmit={handleSubmitPlayer1}>
+            <input
+              className="input"
+              type="text"
+              value={players.player1.name}
+              onChange={(e) => handleNameChange('player1', e.target.value)}
+              placeholder="Enter player name"
+            />
+            <br />
+            <button className="addPlayerButton" type="submit">
+              Add
+            </button>
+          </form>
         </div>
         <div className="info"></div>
       </div>
       <div className="flex">
         <div className="item">
           <img className="image" src={whiteCat} alt="Cat" />
-          <input
-            className="input"
-            type="text"
-            value={players.player2.name}
-            onChange={(e) => handleNameChange('player2', e.target.value)}
-            placeholder="Enter player name"
-          />
-          <button className="addPlayerButton" type="submit">
-            Add
-          </button>
+          <form onSubmit={handleSubmitPlayer2}>
+            <input
+              className="input"
+              type="text"
+              value={players.player2.name}
+              onChange={(e) => handleNameChange('player2', e.target.value)}
+              placeholder="Enter player name"
+            />
+            <br />
+            <button className="addPlayerButton" type="submit">
+              Add
+            </button>
+          </form>
         </div>
       </div>
     </div>
