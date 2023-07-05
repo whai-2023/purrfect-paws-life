@@ -7,7 +7,7 @@ type PopupProps = {
 }
 
 function PopUpChooseCatTower(props: PopupProps) {
-  const { setCatTower } = useGameStore()
+  const { players, activePlayer, setCatTower } = useGameStore()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -25,7 +25,9 @@ function PopUpChooseCatTower(props: PopupProps) {
       {isOpen && (
         <div className="Popup-container">
           <div className="Popup">
-            <div>{`Please choose from these potential cat tower investment oppurtinities!`}</div>
+            <div>{`${
+              players[activePlayer - 1].name
+            }, please choose from these potential cat tower investment oppurtinities!`}</div>
             <div>
               {props.catTowers.map((catTower) => (
                 <button

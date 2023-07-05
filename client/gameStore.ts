@@ -20,22 +20,22 @@ const initialGameState: GameState = {
   players: [
     {
       id: 1,
-      name: 'Aiden',
+      name: 'Player 1',
       path: 1,
-      moveTotal: 6,
+      moveTotal: 1,
       treats: 0,
-      owner: [],
-      catTower: [],
+      owner: [{ id: 1, name: 'Sarah', allowance: 10, tax: -1 }],
+      catTower: [{ id: 1, material: 'carboard', value: 2 }],
       choices: { school: 'yes', marriage: 'yes', kittens: 'yes' },
     },
     {
       id: 2,
-      name: 'Sarah',
+      name: 'Player 2',
       path: 1,
-      moveTotal: 6,
+      moveTotal: 1,
       treats: 0,
-      owner: [],
-      catTower: [],
+      owner: [{ id: 1, name: 'Sarah', allowance: 10, tax: -1 }],
+      catTower: [{ id: 1, material: 'carboard', value: 2 }],
       choices: { school: 'yes', marriage: 'yes', kittens: 'yes' },
     },
   ],
@@ -58,8 +58,8 @@ const useGameStore = create(
     setTreats: (treats) => {
       set((state) => {
         state.activePlayer === 1
-          ? (state.players[0].treats += treats)
-          : (state.players[1].treats += treats)
+          ? (state.players[1].treats += treats)
+          : (state.players[0].treats += treats)
       })
     },
     setPath: (path) => {
