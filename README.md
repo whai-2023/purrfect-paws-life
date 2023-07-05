@@ -5,7 +5,7 @@
 This project uses legacy packages that require an older version of React.
 
 Please run this commands to install packages:
-`npm install --save --legacy-peer-deps react-wheel-of-prizes react-audio-player use-sound react-confetti fireworks react-text-transition && npm i --legacy-peer-deps`
+`npm install --save --legacy-peer-deps react-wheel-of-prizes react-audio-player use-sound react-confetti && npm i --legacy-peer-deps`
 
 Please run this command to populate database:
 `npm run knex migrate:latest && npm run knex seed:run`
