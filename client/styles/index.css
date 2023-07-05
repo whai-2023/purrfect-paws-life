@@ -33,6 +33,10 @@ body {
   flex-direction: column;
 }
 
+.item{
+  padding: 5rem;
+}
+
 .input {
   width:200px;
   padding:20px;

@@ -7,13 +7,12 @@
 
 .flex {
   display: flex;
-  align-items: flex-start; /* Align items vertically at the top */
+  align-items: flex-start;
 }
 
 .name {
   font-size: 18px;
-  margin-bottom: 10px; /* Add spacing between image and name */
-
+  margin-bottom: 10px;
 }
 
 #profile {
@@ -28,13 +27,13 @@
 .info {
   display: flex;
   gap: 2rem;
-  align-items: flex-start; /* Align items vertically at the top */
+  align-items: flex-start;
 }
 
 .child1,
 .child2 {
-  flex: 1; /* Distribute available space evenly */
-  padding: 0 1rem; /* Adjust the padding as needed */
+  flex: 1;
+  padding: 0 1rem;
   font-size:30px;
   text-align: center;
 }
