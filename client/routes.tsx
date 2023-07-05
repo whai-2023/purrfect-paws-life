@@ -14,7 +14,7 @@ export const routes = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index element={<Landing />} />
       <Route path="/game" element={<GameBoard />} />
-      <Route path="/game/scoreboard" element={<WinningPage />} />
+      <Route path="/scoreboard" element={<WinningPage />} />
     </Route>
   )
 )

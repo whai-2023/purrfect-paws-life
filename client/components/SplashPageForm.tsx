@@ -2,6 +2,8 @@ import { useState } from 'react'
 import creamCat from '/catProfileimage/cat.png'
 import whiteCat from '/catProfileimage/whitecat.png'
 
+import useGameStore from '../gameStore'
+
 import { Players } from '../../models/Players'
 
 import '../styles/index.css'
@@ -12,6 +14,8 @@ const initialFormData = {
 }
 
 export default function SplashPageForm() {
+  const { setName1, setName2 } = useGameStore()
+
   const [players, setPlayers] = useState<Players>(initialFormData)
 
   const handleNameChange = (playerKey: string, name: string) => {
@@ -29,12 +33,12 @@ export default function SplashPageForm() {
 
   const handleSubmitPlayer1 = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Add button clicked!', players.player1.name)
+    setName1(players.player1.name)
   }
 
   const handleSubmitPlayer2 = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Add button clicked!', players.player2.name)
+    setName2(players.player2.name)
   }
 
   return (

@@ -1,48 +1,40 @@
 import { useState, useEffect } from 'react'
-import { Choices } from '../../models/Choices'
 import useGameStore from '../gameStore'
+import { CatTower } from '../../models/CatTower'
 
 type PopupProps = {
-  choiceType: string
-  content: string
-  button1: string
-  button2: string
+  catTowers: CatTower[]
 }
 
-function PopUpChoice(props: PopupProps) {
-  const { setPath, setChoice } = useGameStore()
+function PopUpChooseCatTower(props: PopupProps) {
+  const { setCatTower } = useGameStore()
 
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleChoiceSelection = (choice: number, yesOrNo: string) => {
-    setChoice(props.choiceType.split(' ')[1] as keyof Choices, yesOrNo)
-    setPath(choice)
+  const handleChoiceSelection = (catTower: CatTower) => {
+    setCatTower(catTower)
     setIsOpen(false)
   }
 
   useEffect(() => {
     setIsOpen(true)
-  }, [props.content])
+  }, [props.catTowers])
 
   return (
     <>
       {isOpen && (
         <div className="Popup-container">
           <div className="Popup">
-            <div>{props.content}</div>
+            <div>{`Please choose from these potential cat tower investment oppurtinities!`}</div>
             <div>
-              <button
-                className="PopupButton"
-                onClick={() => handleChoiceSelection(1, 'yes')}
-              >
-                {props.button1}
-              </button>
-              <button
-                className="PopupButton"
-                onClick={() => handleChoiceSelection(2, 'no')}
-              >
-                {props.button2}
-              </button>
+              {props.catTowers.map((catTower) => (
+                <button
+                  className="PopupButton"
+                  onClick={() => handleChoiceSelection(catTower)}
+                >
+                  {`${catTower.material} earns ${catTower.value} treats per pay`}
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -51,4 +43,4 @@ function PopUpChoice(props: PopupProps) {
   )
 }
 
-export default PopUpChoice
+export default PopUpChooseCatTower
