@@ -5,11 +5,6 @@ import '../styles/scoreboard.css'
 
 import useGameStore from '../gameStore'
 
-interface ImageRepeaterProps {
-  imageSource: string
-  count: number
-}
-
 export default function Scoreboard() {
   const { players } = useGameStore()
 
