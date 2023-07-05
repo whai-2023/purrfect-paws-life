@@ -27,39 +27,72 @@ export default function GameBoard() {
   const { activePlayer, players, setTreats } = useGameStore()
 
   // Local states for managing player position
-  const [player1Space, setPlayer1Space] = useState(1)
-  const [player2Space, setPlayer2Space] = useState(1)
 
-  const [player1Path, setPlayer1Path] = useState(1)
-  const [player2Path, setPlayer2Path] = useState(1)
+  const player1Path = players[0].path
+  const player2Path = players[1].path
+  const player1Space = players[0].moveTotal
+  const player2Space = players[1].moveTotal
 
   // React-Query states accessed from db via api
-  const { data: yellowPawPrintData } = useQuery(['yellowPawPrintData'], () =>
-    getShuffledYellowPawPrintData()
-  )
-  const { data: pawPrints } = useQuery(['pawPrints'], () => getAllPawPrints())
-  const { data: ownerData } = useQuery(['ownerData'], () => getAllOwners())
-  const { data: catTowerData } = useQuery(['catTowerData'], () =>
-    getAllCatTowers()
-  )
+  const {
+    data: yellowPawPrintData,
+    isError: isYellowPawPrintError,
+    isLoading: isYellowPawPrintLoading,
+  } = useQuery(['yellowPawPrintData'], () => getShuffledYellowPawPrintData())
+
+  const {
+    data: pawPrints,
+    isError: isPawPrintsError,
+    isLoading: isPawPrintLoading,
+  } = useQuery(['pawPrints'], () => getAllPawPrints())
+
+  const {
+    data: ownerData,
+    isError: isOwnerDataError,
+    isLoading: isOwnerDataLoading,
+  } = useQuery(['ownerData'], () => getAllOwners())
+
+  const {
+    data: catTowerData,
+    isError: isCatTowerDataError,
+    isLoading: isCatTowerDataLoading,
+  } = useQuery(['catTowerData'], () => getAllCatTowers())
 
   // UseEffect for updating GameState
   useEffect(() => {
     function addYellowTreats() {
       if (yellowPawPrintData) {
         activePlayer === 1
-          ? setTreats(yellowPawPrintData![player1Space].value)
-          : setTreats(yellowPawPrintData![player2Space].value)
+          ? setTreats(yellowPawPrintData[player1Space].value)
+          : setTreats(yellowPawPrintData[player2Space].value)
       }
     }
     addYellowTreats()
-
-    setPlayer1Path(players[0].path)
-    setPlayer2Path(players[1].path)
-    setPlayer1Space(players[0].moveTotal)
-    setPlayer2Space(players[1].moveTotal)
     console.log(players, activePlayer)
   }, [activePlayer])
+
+  if (
+    isYellowPawPrintError ||
+    isPawPrintsError ||
+    isCatTowerDataError ||
+    isOwnerDataError
+  ) {
+    return (
+      <div>
+        There was an error, please try again, or do something, I don't care, I'm
+        not your boss.
+      </div>
+    )
+  }
+
+  if (
+    isYellowPawPrintLoading ||
+    isPawPrintLoading ||
+    isCatTowerDataLoading ||
+    isOwnerDataLoading
+  ) {
+    return <div>Loading...</div>
+  }
 
   return (
     <>
@@ -164,7 +197,7 @@ export default function GameBoard() {
                     key={i}
                     owners={[
                       ownerData![getRandomInt(0, 1)],
-                      ownerData![getRandomInt(2, 5)],
+                      ownerData![getRandomInt(2, 4)],
                     ]}
                   />
                 ) : null}
@@ -177,7 +210,7 @@ export default function GameBoard() {
                     key={i}
                     owners={[
                       ownerData![getRandomInt(0, 1)],
-                      ownerData![getRandomInt(2, 5)],
+                      ownerData![getRandomInt(2, 4)],
                     ]}
                   />
                 ) : null}

@@ -27,7 +27,7 @@ function PopUpChooseOwner(props: PopupProps) {
           <div className="Popup">
             <div>{`Please choose from these potential owners!`}</div>
             <div>
-              {props.owners.map((owner, i) => (
+              {props.owners.map((owner) => (
                 <button
                   className="PopupButton"
                   onClick={() => handleChoiceSelection(owner)}
