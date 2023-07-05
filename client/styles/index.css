@@ -3,6 +3,10 @@
   display: flex;
 }
 
+body {
+  font-family: 'Gaegu';
+}
+
 main {
   width: 100%;
 }
@@ -11,11 +15,57 @@ main {
   position: absolute;
 }
 
-body {
+.titleText {
   display: flex;
-  overflow-y: hidden;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  align-items: center;
+  margin: 10rem auto;
+  flex-direction: column;
+}
+
+.input {
+  width:200px;
+  padding:20px;
+  border-radius: 100px;
+  font-size: 30px;
+  background-color:#f3faab;
+  font-family: 'gaegu';
+}
+
+.addPlayerButton {
+  color: black;
+  background-color: #f3faab;
+  border-radius: 100px;
+  font-size: 15px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-family: 'gaegu';
+}
+
+.title1 {
+  flex: 1;
+  font-size:100px;
+  border: solid;
+  border-radius: 100px;
+  background-color: #f3faab;
+  padding: 0px 25px;
+}
+
+.title2 {
+  flex: 1;
+  font-size:80px;
+  border:solid;
+  border-radius: 100px;
+  background-color: #f3faab;
+  padding: 0px 25px;
+}
+
+.splashForms {
+  font-size: larger;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-board {
@@ -24,6 +74,7 @@ body {
   max-height: 100vh;
   background-size: 3710px 900px;
   border: none; /* Remove border */
+  background-repeat: no-repeat;
 }
 
 @keyframes flashing {

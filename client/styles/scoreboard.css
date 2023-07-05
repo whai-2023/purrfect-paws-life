@@ -2,6 +2,7 @@
   width: 200px;
   height: 200px;
   border-radius: 300px;
+  border: solid;
 }
 
 .flex {
@@ -12,8 +13,7 @@
 .name {
   font-size: 18px;
   margin-bottom: 10px; /* Add spacing between image and name */
-  color:#f6f7d7;
-  font-family: 'Aclonica'
+
 }
 
 #profile {
@@ -37,8 +37,6 @@
   padding: 0 1rem; /* Adjust the padding as needed */
   font-size:30px;
   text-align: center;
-  color:#f6f7d7;
-  font-family: 'Aclonica'
 }
 
 .fishImage{
