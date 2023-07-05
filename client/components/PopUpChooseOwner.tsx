@@ -7,7 +7,7 @@ type PopupProps = {
 }
 
 function PopUpChooseOwner(props: PopupProps) {
-  const { setOwner } = useGameStore()
+  const { players, activePlayer, setOwner } = useGameStore()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -25,7 +25,9 @@ function PopUpChooseOwner(props: PopupProps) {
       {isOpen && (
         <div className="Popup-container">
           <div className="Popup">
-            <div>{`Please choose from these potential owners!`}</div>
+            <div>{`${
+              players[activePlayer - 1].name
+            }, please choose from these potential owners!`}</div>
             <div>
               {props.owners.map((owner) => (
                 <button
