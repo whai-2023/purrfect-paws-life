@@ -22,11 +22,31 @@ main {
   flex-direction: row;
 }
 
+.titleText {
+  align-items: center;
+  margin: 10rem auto;
+  flex-direction: column;
+}
+
 body {
   display: flex;
   overflow-y: hidden;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  margin: 0;
+  padding: 0;
+}
+
+.footerPopup {
+  position: absolute;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: #f3faab;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  gap: 2px;
+  line-height: 1.5;
+  padding: 5px;
+  bottom: 80px;
 }
 
 .game-board {
@@ -34,7 +54,7 @@ body {
   position: absolute;
   max-height: 100vh;
   background-size: 3710px 900px;
-  border: none; /* Remove border */
+  border: none;
 }
 
 @keyframes flashing {
