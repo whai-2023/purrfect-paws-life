@@ -12,6 +12,8 @@ type Actions = {
   setChoice: (type: keyof PlayerState['choices'], choice: string) => void
   setCatTower: (catTower: CatTower) => void
   setOwner: (owner: Owner) => void
+  setName1: (name1: string) => void
+  setName2: (name2: string) => void
 }
 
 const initialGameState: GameState = {
@@ -86,6 +88,16 @@ const useGameStore = create(
         state.activePlayer === 1
           ? state.players[0].owner.push(owner)
           : state.players[1].owner.push(owner)
+      })
+    },
+    setName1: (name1) => {
+      set((state) => {
+        state.players[0].name = name1
+      })
+    },
+    setName2: (name2) => {
+      set((state) => {
+        state.players[1].name = name2
       })
     },
   }))
