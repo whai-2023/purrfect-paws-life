@@ -11,7 +11,7 @@ export default function WinningPage() {
     <div>
       <Confetti />
       <div className="winnertitle">
-        <h2>The Winner is {players[0].name}!</h2>
+        <h2>The Winner is {players[0].name}!!</h2>
       </div>
       <div>
         <Scoreboard />
